@@ -1,0 +1,1461 @@
+# BedWars - wiadomosci, menu i animacje
+# Kolory: &0-&f, &l, &o, &r. Zmienne: {PLAYER}, {TEAM}, {SECONDS} itd.
+# Zachowaj placeholdery wystepujace w danym wpisie. Mozesz zmieniac ich kolejnosc.
+# Pusty tekst wycisza wiadomosc czatu. Lista zamiast tekstu daje kilka linii.
+# W titles lista to kolejne klatki animacji; czasy znajdziesz w config.yml.
+# Przeladowanie: /bw przeladuj. Brakujace klucze uzupelniaja sie automatycznie.
+
+admin-match-menu:
+  announce:
+    admin: '&6[ADMIN] &f{PLAYER} &e{ACTION}.'
+  click:
+    nie-mozna-teraz-przeskoczyc-fazy: '&cNie mozna teraz przeskoczyc fazy.'
+    przeskoczyl-do-nastepnej-fazy: przeskoczyl do nastepnej fazy
+    ten-zawodnik-nie-jest-juz-dostepny: '&cTen zawodnik nie jest juz dostepny do wskrzeszenia.'
+    wskrzesil-zawodnika: wskrzesil zawodnika {PLAYER}
+    wstrzymal-mecz: wstrzymal mecz
+    wznowil-mecz: wznowil mecz
+  control-item:
+    ingerencja-pauza-fazy-i-wskrzeszanie: '&7Ingerencja, pauza, fazy i wskrzeszanie.'
+    panel-admina-ppm: '&6&lPanel admina &7(PPM)'
+  open-revive:
+    brak-zawodnikow-do-wskrzeszenia: '&7Brak zawodnikow do wskrzeszenia'
+    druzyna: '&7Druzyna: {VALUE1}{TEAM}'
+    kliknij-aby-przywrocic-do-gry: '&eKliknij, aby przywrocic do gry.'
+    lozko-nie-zostanie-odbudowane: '&7Lozko nie zostanie odbudowane.'
+    nastepna-strona: '&eNastepna strona'
+    odswiez: '&aOdswiez'
+    poprzednia-strona: '&ePoprzednia strona'
+    strona: '&7Strona {VALUE1}/{PAGES}'
+    wroc-do-panelu: '&eWroc do panelu'
+    wskrzeszanie-zawodnika: '&8Wskrzeszanie zawodnika'
+  open:
+    creative-budowanie-skrzynie-i-przedmioty: '&7Creative, budowanie, skrzynie i przedmioty.'
+    dziala-takze-w-pauzie: '&7Dziala takze w pauzie.'
+    kliknij-aby-przelaczyc-tryb: '&eKliknij, aby przelaczyc tryb.'
+    kliknij-przejdz-do-kolejnej-fazy: '&eKliknij = przejdz do kolejnej fazy.'
+    lista-wyeliminowanych-i-odradzajacych-sie: '&7Lista wyeliminowanych i odradzajacych sie.'
+    najpierw-wznow-mecz: '&cNajpierw wznow mecz.'
+    nastepna-faza: '&6Nastepna faza'
+    nie-jestes-zawodnikiem-pvp-zablokowane: '&7Nie jestes zawodnikiem; PvP zablokowane.'
+    panel-admina-mecz: '&8Panel admina - mecz'
+    panel-jest-dostepny-dla-administratora-obserwujacego: '&cPanel jest dostepny dla administratora obserwujacego trwajacy mecz. Uzyj
+      /bw obserwuj.'
+    pauza-zatrzymuje-czas-i-border: '&7Pauza zatrzymuje czas i border.'
+    text: '&7{VALUE1}'
+    tps-cpu-ram-i-swiaty-na: '&7TPS, CPU, RAM i swiaty na czacie.'
+    w-tym-trybie-jestes-widoczny: '&7W tym trybie jestes WIDOCZNY.'
+    wlacz-ingerencje: '&6Wlacz ingerencje'
+    wskrzes-zawodnika: '&aWskrzes zawodnika'
+    wstrzymaj-mecz: '&eWstrzymaj mecz'
+    wydajnosc-serwera: '&bWydajnosc serwera'
+    wylacz-ingerencje: '&cWylacz ingerencje'
+    wznow-mecz: '&aWznow mecz'
+arena-startup:
+  attempt:
+    automatyczne-ladowanie-mapy-nie-powiodlo-sie: Automatyczne ladowanie mapy {MAP} nie powiodlo sie. Konfiguracja pozostaje zapisana;
+      sprawdz poprzedni blad CSWM w konsoli.
+    zapisana-mapa-nie-jest-kompletna: 'Zapisana mapa {MAP} nie jest kompletna: {MISSING}'
+  finished:
+    proba-zaladowania-zapisanej-mapy: 'Proba zaladowania zapisanej mapy {MAP}: {ERROR}'
+arena-validator:
+  validate:
+    brak-generatora-bazy-druzyny: Brak generatora bazy druzyny {TEAM}.
+    brak-generatorow-diamentow: Brak generatorow diamentow.
+    brak-generatorow-szmaragdow: Brak generatorow szmaragdow.
+    brak-lobby: Brak lobby.
+    brak-lozka-druzyny: Brak lozka druzyny {TEAM}.
+    brak-skonfigurowanego-worldbordera-srodek-promien: Brak skonfigurowanego worldbordera (srodek + promien).
+    brak-spawnu-druzyny: Brak spawnu druzyny {TEAM}.
+    brak-spawnu-obserwatorow: Brak spawnu obserwatorow.
+    brak-strefy-bez-budowania-druzyny-ustaw: Brak strefy bez budowania druzyny {TEAM} (ustaw 2 punkty).
+    brak-swiata-mapy: Brak swiata mapy.
+    brak-wybranej-mapy: Brak wybranej mapy.
+    sklepy-ulepszen-4-ustaw-po-jednym: 'Sklepy ulepszen: {VALUE1}/4 (ustaw po jednym przy kazdej bazie).'
+    sklepy-z-przedmiotami-4-ustaw-po: 'Sklepy z przedmiotami: {VALUE1}/4 (ustaw po jednym przy kazdej bazie).'
+bed-wars-bootstrap:
+  on-enable:
+    bedwars-party-z-wyborem-koloru-efekty: 'BedWars: party z wyborem koloru, efekty meczu i worldborder aktywne.'
+bed-wars-command:
+  finished:
+    kopia-turniejowa-mapy-jest-gotowa: '&aKopia turniejowa mapy jest gotowa.'
+    nie-udalo-sie-zaladowac-zapisanej-mapy: '&cNie udalo sie zaladowac zapisanej mapy. Sprawdz konsole serwera.'
+  help:
+    bedwars-komendy: '&6&lBedWars &7- komendy'
+    bw-dolacz-opusc-druzyna: '&e/bw dolacz &7| opusc | druzyna'
+    bw-obserwuj-dolacz-do-obserwacji-z: '&e/bw obserwuj &7- dolacz do obserwacji z GUI; /bw opusc - powrot do lobby'
+    bw-panel-panel-ingerencji-admina-obserwujacego: '&e/bw panel &7- panel ingerencji admina obserwujacego mecz'
+    bw-ustawdruzyne-nick-czerwoni-zieloni-niebiescy: '&e/bw ustawdruzyne <nick> <czerwoni|zieloni|niebiescy|biali> &7| druzyny'
+    bw-ustawlobby-ustawia-glowne-lobby-serwera: '&e/bw ustawlobby &7- ustawia glowne lobby serwera'
+    bw-ustawsklep-przedmioty-ulepszenia-wymusstart-pauza: '&e/bw ustawsklep <przedmioty|ulepszenia> &7| wymusstart | pauza | wznow |
+      nastepnafaza'
+    bw-ustawspawn-druzyna-ustawlozko-druzyna-dodajgenerator: '&e/bw ustawspawn <druzyna> &7| ustawlozko <druzyna> | dodajgenerator <diamenty|szmaragdy>'
+    bw-utworz-mapa-wybierz-mapa-lista: '&e/bw utworz <mapa> &7| wybierz <mapa> | lista | usun <mapa> | sprawdz'
+    bw-zatrzymaj-reset-wskrzes-nick-obserwator: '&e/bw zatrzymaj &7| reset | wskrzes <nick> | obserwator <nick> | status | przeladuj'
+    konfiguruj-nazwa-mapy-laduje-mape-i: '&e/konfiguruj <nazwa_mapy> &7- laduje mape i prowadzi krok po kroku przez konfiguracje'
+  on-command:
+    bedwars-stan-systemu: '&6&lBedWars &7- stan systemu'
+    brak: '&7brak'
+    brak-2: '&8brak'
+    brak-3: brak
+    brak-4: BRAK
+    brak-aktywnej-mapy: '&cBrak aktywnej mapy.'
+    brak-uprawnien: '&cBrak uprawnien.'
+    bw-dodajgenerator-diamenty-szmaragdy: '&c/bw dodajgenerator diamenty|szmaragdy'
+    bw-ustawlozko-czerwoni-zieloni-niebiescy-biali: '&c/bw ustawlozko czerwoni|zieloni|niebiescy|biali'
+    bw-ustawsklep-przedmioty-ulepszenia: '&c/bw ustawsklep przedmioty|ulepszenia'
+    bw-ustawspawn-czerwoni-zieloni-niebiescy-biali: '&c/bw ustawspawn czerwoni|zieloni|niebiescy|biali'
+    cswm-szablon-runtime: '&eCSWM: &f{VALUE1} &8| &eSzablon: &f{VALUE2} &8| &eRuntime: &f{VALUE3}'
+    dodano-generator: '&aDodano generator {VALUE1}.'
+    dodano-npc-sklepu: '&aDodano NPC sklepu.'
+    druzyna-czerwoni-zieloni-niebiescy-biali: '&cDruzyna: czerwoni / zieloni / niebiescy / biali'
+    gracz-jest-offline: '&cGracz jest offline.'
+    kompletna: kompletna
+    konfiguracja-mapy-jest-niekompletna: '&cKonfiguracja mapy jest niekompletna: &7{MISSING}'
+    ladowanie: ladowanie...
+    mapa-jest-kompletna-i-gotowa-do: '&aMapa jest kompletna i gotowa do gry.'
+    mapa-jest-niekompletna: '&cMapa jest niekompletna:'
+    mapa-konfiguracja: '&eMapa: &f{PLAYER} &8| &eKonfiguracja: &f{VALUE2}'
+    mapy: '&eMapy: &f{VALUE1}'
+    mozna-wskrzesic-tylko-wyeliminowanego-lub-odradzajacego: '&cMozna wskrzesic tylko wyeliminowanego lub odradzajacego sie zawodnika
+      trwajacego meczu.'
+    najpierw-zakoncz-i-zresetuj-obecny-mecz: '&cNajpierw zakoncz i zresetuj obecny mecz.'
+    nie: nie
+    nie-ma-takiej-mapy: '&cNie ma takiej mapy.'
+    nie-mozna-teraz-przeskoczyc-fazy: '&cNie mozna teraz przeskoczyc fazy.'
+    nie-udalo-sie-przypisac-gracza-druzyna: '&cNie udalo sie przypisac gracza (druzyna pelna lub mecz trwa).'
+    nie-udalo-sie-wyladowac-poprzedniej-mapy: '&cNie udalo sie wyladowac poprzedniej mapy. Sprawdz konsole.'
+    niekompletna: niekompletna
+    przeskoczono-do-nastepnej-fazy: '&aPrzeskoczono do nastepnej fazy.'
+    przygotowuje-swieza-kopie-zapisanej-mapy: '&ePrzygotowuje swieza kopie zapisanej mapy...'
+    przywrocono-gracza: '&aPrzywrocono gracza &f{PLAYER}&a.'
+    stan-meczu-gracze: '&eStan meczu: &f{VALUE1} &8| &eGracze: &f{VALUE2}'
+    tak: tak
+    tej-komendy-mozna-uzyc-tylko-w: '&cTej komendy mozna uzyc tylko w grze.'
+    text: '&7- &c{VALUE1}'
+    text-2: '{TEAM}&7: '
+    text-3: '&7, '
+    text-4: '&a{PLAYER} -> {VALUE2}{TEAM}'
+    twoja-druzyna: '&eTwoja druzyna: {TEAM}'
+    ustawiono-glowne-lobby-serwera-nowi-gracze: '&aUstawiono glowne lobby serwera. Nowi gracze trafia tutaj z kompasem dolaczenia.'
+    ustawiono-gracza-jako-obserwatora: '&aUstawiono gracza &f{PLAYER} &ajako obserwatora.'
+    ustawiono-lozko-druzyny: '&aUstawiono lozko druzyny {VALUE1}{TEAM}&a.'
+    ustawiono-spawn-druzyny: '&aUstawiono spawn druzyny {VALUE1}{TEAM}&a.'
+    usunieto-mape: '&aUsunieto mape.'
+    utworzono-i-wybrano-mape-dalsza-konfiguracja: '&aUtworzono i wybrano mape &f{PLAYER}&a. Dalsza konfiguracja: &f/konfiguruj {PLAYER2}&a.'
+    uzycie-bw-obserwuj: '&eUzycie: /bw obserwuj'
+    wybrano-mape: '&aWybrano mape &f{PLAYER}&a.'
+    zaladowany: zaladowany
+bed-wars-plugin:
+  copy-legacy:
+    nie-udalo-sie-przeniesc: 'Nie udalo sie przeniesc {FROM}: {ERROR}'
+  migrate-legacy-data:
+    przeniesiono-dane-z-poprzedniego-folderu-plugins: Przeniesiono dane z poprzedniego folderu plugins/BedWars2026 do plugins/BedWars.
+  on-enable:
+    bedwars-uruchomiony-autor-mateusz-nowosielski-spigot: 'BedWars {VERSION} uruchomiony - autor: Mateusz Nowosielski / Spigot 1.8.8
+      / Java 8 / CSWM'
+    brak-continued-slime-world-manager-mecze: 'BRAK Continued Slime World Manager: mecze nie wystartuja, dopoki nie wgrasz SwoftyWorldManager/SlimeWorldManager
+      dla 1.8.x.'
+    nie-mozna-wczytac-messages-yml: 'Nie mozna wczytac messages.yml: {ERROR}'
+commands:
+  bw:
+    description: BedWars - komendy graczy i administracji
+    usage: /bw
+  konfiguruj:
+    description: Konfigurator map BedWars
+    usage: /konfiguruj <nazwa_mapy>
+  no-permission: '&cNie masz uprawnien do tej komendy.'
+  party:
+    description: Party - wspolne dolaczanie i wybor koloru
+    usage: /party
+config-hologram:
+  refresh:
+    generator-bazy: '{VALUE1}&lGENERATOR BAZY - {TEAM}'
+    generator-diamentow: '&b&lGENERATOR DIAMENTOW'
+    generator-szmaragdow: '&a&lGENERATOR SZMARAGDOW'
+    sklep-z-przedmiotami: '&b&lSKLEP Z PRZEDMIOTAMI'
+    strefa-bez-budowania-punkt-1: '{VALUE1}&lSTREFA BEZ BUDOWANIA - PUNKT 1'
+    strefa-bez-budowania-punkt-2: '{VALUE1}&lSTREFA BEZ BUDOWANIA - PUNKT 2'
+    ulepszenia-druzyny: '&6&lULEPSZENIA DRUZYNY'
+    ustawiono-lozko: '{VALUE1}&lUSTAWIONO LOZKO - {TEAM}'
+    ustawiono-poczekalnie: '&a&lUSTAWIONO POCZEKALNIE'
+    ustawiono-spawn: '{VALUE1}&lUSTAWIONO SPAWN - {TEAM}'
+    ustawiono-spawn-obserwatorow: '&d&lUSTAWIONO SPAWN OBSERWATOROW'
+config-menu:
+  back:
+    powrot-do-poprzedniego-menu: '&7Powrot do poprzedniego menu.'
+    wroc: '&a← Wroc'
+  begin-selection:
+    nie-musisz-wpisywac-zadnej-komendy: '&7Nie musisz wpisywac zadnej komendy.'
+    text: '&8&m------------------------------------------------'
+    tryb-wskazywania: '&b&lTRYB WSKAZYWANIA'
+  click-generators:
+    aby-usunac-wszystkie-generatory-uzyj-shift: '&cAby usunac wszystkie generatory, uzyj Shift + klik.'
+    kliknij-ppm-kilofem-w-blok-pod: '&eKliknij &fPPM kilofem &ew blok pod generatorem &bdiamentow&e.'
+    kliknij-ppm-kilofem-w-blok-pod-2: '&eKliknij &fPPM kilofem &ew blok pod generatorem &2szmaragdow&e.'
+    usunieto-wszystkie-generatory-diamentow: '&aUsunieto wszystkie generatory diamentow.'
+    usunieto-wszystkie-generatory-szmaragdow: '&aUsunieto wszystkie generatory szmaragdow.'
+  click-main:
+    brak-aktywnej-mapy-uzyj-konfiguruj-nazwa: '&cBrak aktywnej mapy. Uzyj /konfiguruj <nazwa_mapy>.'
+    brak-dzialajacego-slime-world-managera-administrator: '&cBrak dzialajacego Slime World Managera. Administrator serwera musi go poprawnie
+      uruchomic.'
+    masz-nieopublikowane-zmiany-shift-klik-w: '&eMasz nieopublikowane zmiany. &cShift + klik &ew bariere, jesli naprawde chcesz wyjsc
+      bez zatwierdzania mapy.'
+    najpierw-ustaw-glowne-lobby-na-innym: '&cNajpierw ustaw glowne lobby na INNYM swiecie: &f/bw ustawlobby&c.'
+    nie-moge-wyladowac-mapy-jezeli-lobby: '&7Nie moge wyladowac mapy, jezeli lobby znajduje sie na tej samej mapie.'
+    nie-zatwierdze-niekompletnej-mapy-uzupelnij-czerwone: '&cNie zatwierdze niekompletnej mapy. Uzupelnij czerwone elementy w GUI.'
+    potwierdzenie-kliknij-ponownie-zatwierdz-mape-w: '&6&lPOTWIERDZENIE &eKliknij ponownie &aZATWIERDZ MAPE &ew ciagu 10 sekund.'
+    przeniesiono-na-spawn-swiata-ppm-kilofem: '&aPrzeniesiono na spawn swiata. &7PPM kilofem otwiera konfigurator.'
+    zapisywanie-czystego-szablonu-mapy-niczego-teraz: '&eZapisywanie czystego szablonu mapy... niczego teraz nie klikaj.'
+  click-points:
+    ustawiono-poczekalnie-mapy-dokladnie-w-tym: '&aUstawiono poczekalnie mapy dokladnie w tym miejscu.'
+    ustawiono-spawn-obserwatorow-dokladnie-w-tym: '&aUstawiono spawn obserwatorow dokladnie w tym miejscu.'
+  click-shops:
+    aby-usunac-wszystkie-npc-tego-typu: '&cAby usunac wszystkie NPC tego typu, uzyj Shift + klik.'
+    kliknij-ppm-kilofem-w-blok-na: '&eKliknij &fPPM kilofem &ew blok, na ktorym ma stac &bsklep z przedmiotami&e.'
+    kliknij-ppm-kilofem-w-blok-na-2: '&eKliknij &fPPM kilofem &ew blok, na ktorym ma stac &6sklep ulepszen&e.'
+    usunieto-wszystkie-npc-sklepow-ulepszen: '&aUsunieto wszystkie NPC sklepow ulepszen.'
+    usunieto-wszystkie-npc-sklepow-z-przedmiotami: '&aUsunieto wszystkie NPC sklepow z przedmiotami.'
+  click-team:
+    kliknij-ppm-kilofem-w-blok-pod: '&eKliknij &fPPM kilofem &ew blok pod generatorem zelaza/zlota druzyny {VALUE1}{TEAM}&e.'
+    kliknij-ppm-kilofem-w-lozko-druzyny: '&eKliknij &fPPM kilofem &ew lozko druzyny {VALUE1}{TEAM}&e.'
+    kliknij-ppm-kilofem-w-pierwszy-rog: '&eKliknij &fPPM kilofem &ew pierwszy rog strefy bez budowania druzyny {VALUE1}{TEAM}&e.'
+    kliknij-ppm-kilofem-w-przeciwlegly-rog: '&eKliknij &fPPM kilofem &ew przeciwlegly rog strefy bez budowania druzyny {VALUE1}{TEAM}&e.'
+    przeniesiono-na-spawn-druzyny-ppm-kilofem: '&aPrzeniesiono na spawn druzyny. &7PPM kilofem otwiera konfigurator.'
+    ustawiono-spawn: '&a&lUSTAWIONO SPAWN &7- {VALUE1}{TEAM}&a.'
+  complete-published:
+    konfiguracja-zakonczona-czysty-szablon-mapy-zostal: '&aKonfiguracja zakonczona. Czysty szablon mapy zostal zapisany; swieza kopia
+      meczu przygotuje sie automatycznie.'
+  configured:
+    text: '&a✓ {TEXT}'
+    text-2: '&c✗ {TEXT}'
+  coords:
+    brak: BRAK
+  end-session:
+    zakonczono-konfiguracje-mapy: '&aZakonczono konfiguracje mapy.'
+  fill:
+    text: ' '
+  give-tool:
+    kliknij-ppm-aby-otworzyc-konfigurator: '&7Kliknij &fPPM&7, aby otworzyc konfigurator.'
+    konfigurator-mapy-ppm: '&b&lKONFIGURATOR MAPY &7(PPM)'
+    po-wybraniu-opcji-wskazywania-kliknij: '&7Po wybraniu opcji wskazywania kliknij'
+    tym-kilofem-odpowiedni-blok-na-mapie: '&7tym kilofem odpowiedni blok na mapie.'
+  header:
+    brak: BRAK
+    mapa: '&7Mapa: &f{MAP}'
+  next-step-lore:
+    kliknij-a-otworze-wlasciwe-menu: '&eKliknij, a otworze wlasciwe menu.'
+    kliknij-aby-dostac-pelny-raport: '&eKliknij, aby dostac pelny raport.'
+    kliknij-aby-przejsc-do-przycisku-publikacji: '&7Kliknij, aby przejsc do przycisku publikacji.'
+    najpierw-ustaw-punkty-glowne: '&7Najpierw ustaw &bPunkty glowne&7.'
+    nastepnie-dodaj-generatory: '&7Nastepnie dodaj &bGeneratory&7.'
+    nastepnie-ustaw-druzyny: '&7Nastepnie ustaw &eDruzyny&7.'
+    nastepnie-ustaw-sklepy-npc: '&7Nastepnie ustaw &aSklepy NPC&7.'
+    wszystkie-obowiazkowe-kroki-sa-gotowe: '&aWszystkie obowiazkowe kroki sa gotowe.'
+    zostaly-inne-braki-konfiguracji: '&7Zostaly inne braki konfiguracji.'
+  open-generators:
+    a-nastepnie-kliknij-ppm-kilofem-w: '&7a nastepnie kliknij PPM kilofem w podloge.'
+    aktualnie: '&7Aktualnie: &f{VALUE1}'
+    dodaj-generator-diamentow: '&b&lDodaj generator diamentow'
+    dodaj-generator-szmaragdow: '&2&lDodaj generator szmaragdow'
+    generatory: '&b&lGENERATORY'
+    kliknij-i-wskaz-blok-kilofem: '&eKliknij i wskaz blok kilofem'
+    shift-klik-usun-wszystkie: '&cShift + klik = usun wszystkie'
+    text: ''
+    usun-wszystkie-generatory-diamentow: '&cUsun wszystkie generatory diamentow'
+    usun-wszystkie-generatory-szmaragdow: '&cUsun wszystkie generatory szmaragdow'
+    wybierz-typ-zamknie-sie-menu: '&7Wybierz typ, zamknie sie menu,'
+  open-next-step:
+    mapa-jest-kompletna-kliknij-zielony-przycisk: '&aMapa jest kompletna. &eKliknij zielony przycisk ZATWIERDZ MAPE w glownym menu.'
+  open-points:
+    kliknij: '&eKliknij'
+    kliknij-ustaw-dokladnie-tutaj: '&eKliknij = ustaw dokladnie tutaj'
+    poczekalnia-mapy: '&bPoczekalnia mapy'
+    punkty-glowne: '&b&lPUNKTY GLOWNE'
+    spawn-obserwatorow: '&dSpawn obserwatorow'
+    stan-w-odpowiednim-miejscu-i-kliknij: '&7Stan w odpowiednim miejscu i kliknij opcje.'
+    teleport-na-spawn-swiata: '&eTeleport na spawn swiata'
+  open-settings:
+    aktualnie: '&7Aktualnie: &f{VALUE1}'
+    aktualnie-s: '&7Aktualnie: &f{VALUE1} s'
+    aktualnie-y: '&7Aktualnie: &fY={VALUE1}'
+    czas-na-ponowne-polaczenie: '&bCzas na ponowne polaczenie'
+    czas-odrodzenia: '&fCzas odrodzenia'
+    graczy-w-druzynie: '&aGraczy w druzynie'
+    lpm-1-ppm-1: '&eLPM +1  &8|  &ePPM -1'
+    lpm-1-s-ppm-1-s: '&eLPM +1 s  &8|  &ePPM -1 s'
+    lpm-30-s-ppm-30-s: '&eLPM +30 s  &8|  &ePPM -30 s'
+    lpm-5-s-ppm-5-s: '&eLPM +5 s  &8|  &ePPM -5 s'
+    lpm-zwieksza-ppm-zmniejsza-wartosc: '&7LPM zwieksza, PPM zmniejsza wartosc.'
+    minimalna-liczba-graczy: '&cMinimalna liczba graczy'
+    ochrona-po-odrodzeniu: '&6Ochrona po odrodzeniu'
+    odliczanie-do-startu: '&eOdliczanie do startu'
+    poziom-pustki: '&cPoziom pustki'
+    ustawienia-rozgrywki: '&c&lUSTAWIENIA ROZGRYWKI'
+  open-shop-item-detail:
+    aktualnie: '&7Aktualnie: &f{VALUE1}'
+    cena: '&7Cena: &f{VALUE1} {VALUE2}'
+    cena-1: '&cCena -1'
+    cena-1-2: '&aCena +1'
+    cena-ustawiana-osobno-dla-kazdego-poziomu: '&7Cena: &fustawiana osobno dla kazdego poziomu'
+    ilosc: '&7Ilosc: &f{VALUE1}'
+    ilosc-1: '&cIlosc -1'
+    ilosc-1-2: '&aIlosc +1'
+    kliknij-aby-edytowac-ten-poziom: '&eKliknij, aby edytowac ten poziom'
+    kliknij-aby-przelaczyc: '&eKliknij, aby przelaczyc'
+    kliknij-nastepna-waluta: '&eKliknij = nastepna waluta'
+    poziom: '&bPoziom {TIER}'
+    przedmiot-wlaczony: '&a&lPRZEDMIOT WLACZONY'
+    przedmiot-wylaczony: '&c&lPRZEDMIOT WYLACZONY'
+    stan: '&7Stan: {VALUE1}'
+    text: '&e&l{ITEM}'
+    text-2: ''
+    wlaczony: '&aWLACZONY'
+    wylaczony: '&cWYLACZONY'
+    zmien-walute: '&6Zmien walute'
+  open-shop-item-editor:
+    cena: '&7Cena: &f{VALUE1} {VALUE2}'
+    cena-poziomowa-kliknij-aby-edytowac: '&7Cena: &fpoziomowa (kliknij, aby edytowac)'
+    ilosc: '&7Ilosc: &f{VALUE1}'
+    jak-to-dziala: '&f&lJAK TO DZIALA?'
+    kilof-i-siekiera-maja-osobne-ceny: '&7Kilof i siekiera maja osobne ceny poziomow.'
+    kliknij-aby-edytowac: '&eKliknij, aby edytowac'
+    kliknij-dowolny-przedmiot: '&7Kliknij dowolny przedmiot.'
+    stan: '&7Stan: {VALUE1}'
+    text: ''
+    w-kolejnym-oknie-zmienisz-cene-ilosc: '&7W kolejnym oknie zmienisz cene, ilosc,'
+    walute-oraz-wlaczysz-wylaczysz-pozycje: '&7walute oraz wlaczysz/wylaczysz pozycje.'
+    wlaczony: '&aWLACZONY'
+    wylaczony: '&cWYLACZONY'
+  open-shops:
+    aktualnie: '&7Aktualnie: &f{VALUE1}'
+    ceny-sharpness-protection-haste-forge: '&7Ceny Sharpness, Protection, Haste, Forge,'
+    ceny-waluty-ilosci-i-wlaczanie-wylaczanie: '&7Ceny, waluty, ilosci i wlaczanie/wylaczanie'
+    dodaj-sklep-ulepszen-druzyny: '&6&lDodaj sklep ulepszen druzyny'
+    dodaj-sklep-z-przedmiotami: '&b&lDodaj sklep z przedmiotami'
+    heal-pool-dragon-buff-oraz-pulapek: '&7Heal Pool, Dragon Buff oraz pulapek.'
+    kazdego-przedmiotu-bez-grzebania-w-pliku: '&7kazdego przedmiotu bez grzebania w pliku.'
+    kliknij-aby-edytowac: '&eKliknij, aby edytowac'
+    kliknij-i-wskaz-blok-kilofem: '&eKliknij i wskaz blok kilofem'
+    konfiguruj-sklep-z-przedmiotami: '&e&lKONFIGURUJ SKLEP Z PRZEDMIOTAMI'
+    konfiguruj-ulepszenia-druzyny: '&b&lKONFIGURUJ ULEPSZENIA DRUZYNY'
+    shift-klik-usun-wszystkie: '&cShift + klik = usun wszystkie'
+    sklepy-npc: '&a&lSKLEPY NPC'
+    text: ''
+    usun-wszystkie-sklepy-ulepszen: '&cUsun wszystkie sklepy ulepszen'
+    usun-wszystkie-sklepy-z-przedmiotami: '&cUsun wszystkie sklepy z przedmiotami'
+    w-blok-pod-miejscem-gdzie-ma: '&7w blok pod miejscem, gdzie ma stac NPC.'
+    wybierz-sklep-a-potem-ppm-kilofem: '&7Wybierz sklep, a potem PPM kilofem'
+  open-team:
+    1-spawn-gracza: '{VALUE1}1. Spawn gracza'
+    2-lozko: '{VALUE1}2. Lozko'
+    3-generator-zelaza-zlota: '{VALUE1}3. Generator zelaza/zlota'
+    4-strefa-bez-budowania-punkt-1: '{VALUE1}4. Strefa bez budowania - punkt 1'
+    5-strefa-bez-budowania-punkt-2: '{VALUE1}5. Strefa bez budowania - punkt 2'
+    baza: '{VALUE1}&lBAZA - {TEAM}'
+    kliknij-a-potem-ppm-kilofem-w: '&eKliknij, a potem PPM kilofem w lozko'
+    kliknij-a-potem-ppm-kilofem-w-2: '&eKliknij, a potem PPM kilofem w podloge generatora'
+    kliknij-a-potem-ppm-kilofem-w-3: '&eKliknij, a potem PPM kilofem w pierwszy rog strefy'
+    kliknij-a-potem-ppm-kilofem-w-4: '&eKliknij, a potem PPM kilofem w przeciwlegly rog strefy'
+    kliknij-aby-sie-teleportowac: '&eKliknij, aby sie teleportowac.'
+    kliknij-ustaw-dokladnie-tam-gdzie-stoisz: '&eKliknij = ustaw dokladnie tam, gdzie stoisz'
+    najlepiej-obejmij-nimi-spawn-generator-i: '&7Najlepiej obejmij nimi spawn, generator i sklepy.'
+    najpierw-ustaw-spawn: '&cNajpierw ustaw spawn.'
+    punkt-1: '&7Punkt 1: &f{VALUE1}'
+    punkt-2: '&7Punkt 2: &f{VALUE1}'
+    strefa-bez-budowania-gotowa: '&a&l✓ STREFA BEZ BUDOWANIA GOTOWA'
+    strefa-niegotowa: '&c&l✗ STREFA NIEGOTOWA'
+    teleport-na-spawn-tej-druzyny: '&eTeleport na spawn tej druzyny'
+    ustaw-piec-pozycji-ponizej: '&7Ustaw piec pozycji ponizej.'
+    ustaw-punkt-1-i-punkt-2: '&7Ustaw punkt 1 i punkt 2.'
+    w-meczu-budowanie-w-tym-obszarze: '&aW meczu budowanie w tym obszarze bedzie zablokowane.'
+    wroc-do-druzyn: '&a← Wroc do druzyn'
+    zielony-opis-gotowe-czerwony-brak: '&7Zielony opis = gotowe, czerwony = brak.'
+  open-teams:
+    ani-wylewac-wody-lawy-bridge-egg: '&7ani wylewac wody/lawy. Bridge Egg tez go omija.'
+    co-to-jest-strefa-bez-budowania: '&f&lCO TO JEST STREFA BEZ BUDOWANIA?'
+    druzyny: '&e&lDRUZYNY'
+    generator-bazy: Generator bazy
+    kazda-baza-wymaga-5-elementow: '&7Kazda baza wymaga 5 elementow.'
+    kliknij-aby-skonfigurowac-te-baze: '&eKliknij, aby skonfigurowac te baze'
+    kliknij-druzyne-i-ustaw-wszystko-po: '&7Kliknij druzyne i ustaw wszystko po kolei.'
+    obejmij-nia-np-generator-bazy-spawn: '&7Obejmij nia np. generator bazy, spawn i sklepy.'
+    postep-5: '&7Postep: {VALUE1}{DONE}/5'
+    spawn-gracza: Spawn gracza
+    strefa-punkt-1: Strefa - punkt 1
+    strefa-punkt-2: Strefa - punkt 2
+    text: ''
+    text-2: '{VALUE1}&l{TEAM}'
+    ustawiasz-dwa-przeciwlegle-rogi-prostokata-na: '&7Ustawiasz dwa przeciwlegle rogi prostokata na ziemi.'
+    w-meczu-nie-da-sie-nad: '&7W meczu nie da sie nad tym obszarem stawiac blokow'
+  open-timers:
+    aktualnie: '&7Aktualnie: &f{VALUE1}'
+    border-1x1-obrazenia-az-do-zwyciestwa: '&7Border 1x1, obrazenia az do zwyciestwa.'
+    czas-od-rozpoczecia-meczu: '&7Czas od rozpoczecia meczu.'
+    czasy-faz: '&6&lCZASY FAZ'
+    diamenty-ii: Diamenty II
+    diamenty-iii: Diamenty III
+    lpm-30-s-ppm-30-s: '&eLPM +30 s  &8|  &ePPM -30 s'
+    lpm-ppm-30-s-shift-klik: '&7LPM/PPM: ±30 s, Shift + klik: ±60 s'
+    nagla-smierc-border: Nagla smierc + border
+    od-tej-chwili-border-sie-kurczy: '&7Od tej chwili border sie kurczy.'
+    shift-lpm-60-s-shift-ppm: '&eShift + LPM +60 s  &8|  &eShift + PPM -60 s'
+    szmaragdy-ii: Szmaragdy II
+    szmaragdy-iii: Szmaragdy III
+    text: '&e{VALUE1}'
+    zamkniecie-bordera: Zamkniecie bordera
+    zniszczenie-lozek: Zniszczenie lozek
+  open-tool-tier-detail:
+    aktualnie: '&7Aktualnie: &f{VALUE1}'
+    cena: '&7Cena: &f{VALUE1} {VALUE2}'
+    cena-1: '&cCena -1'
+    cena-1-2: '&aCena +1'
+    kliknij-nastepna-waluta: '&eKliknij = nastepna waluta'
+    poziom: '&b&l{ITEM} - POZIOM {TIER}'
+    zmien-walute: '&6Zmien walute'
+  open-upgrade-price-editor:
+    cena-diamentow: '&7Cena: &f{PRICE} diamentow'
+    ceny-ulepszen-druzyny: '&b&lCENY ULEPSZEN DRUZYNY'
+    kliknij-1: '&eKliknij = +1'
+    kuznia-i: Kuznia I
+    kuznia-ii: Kuznia II
+    kuznia-iii: Kuznia III
+    kuznia-iv: Kuznia IV
+    ochrona-i: Ochrona I
+    ochrona-ii: Ochrona II
+    ochrona-iii: Ochrona III
+    ochrona-iv: Ochrona IV
+    ostrzone-miecze: Ostrzone miecze
+    pospiech-i: Pospiech I
+    pospiech-ii: Pospiech II
+    pulapka-1: 'Pulapka #1'
+    pulapka-2: 'Pulapka #2'
+    pulapka-3: 'Pulapka #3'
+    shift-klik-1: '&eShift + klik = -1'
+    shift-klik-1-diament: '&7Shift + klik = &c-1 diament'
+    strefa-leczenia: Strefa leczenia
+    text: ''
+    text-2: '&b{VALUE1}'
+    wzmocnienie-smoka: Wzmocnienie smoka
+    zmiany-zapisuja-sie-od-razu: '&7Zmiany zapisuja sie od razu.'
+    zwykly-klik-1-diament: '&7Zwykly klik = &a+1 diament'
+  open:
+    1-punkty-glowne: 1. Punkty glowne
+    1-ustaw-punkty-glowne: '&71. Ustaw punkty glowne'
+    2-druzyny: 2. Druzyny
+    2-ustaw-4-bazy-spawn-lozko: '&72. Ustaw 4 bazy: spawn, lozko, generator, strefe'
+    3-dodaj-generatory-diamentow-i-szmaragdow: '&73. Dodaj generatory diamentow i szmaragdow'
+    3-generatory: 3. Generatory
+    4-dodaj-sklepy-npc: '&74. Dodaj sklepy NPC'
+    4-sklepy-npc: 4. Sklepy NPC
+    5-sprawdz-ustawienia-i-czasy: '&75. Sprawdz ustawienia i czasy'
+    5-ustawienia-gry: 5. Ustawienia gry
+    6-czasy-faz: 6. Czasy faz
+    6-kliknij-zatwierdz-mape: '&76. Kliknij &aZATWIERDZ MAPE'
+    7-sprawdzenie-mapy: 7. Sprawdzenie mapy
+    8-publikacja: 8. Publikacja
+    administrator-serwera-musi-go-poprawnie-uruchomic: '&7Administrator serwera musi go poprawnie uruchomic.'
+    bez-niego-mapa-nie-zostanie-opublikowana: '&7Bez niego mapa nie zostanie opublikowana.'
+    brak: brak
+    brak-2: BRAK
+    brak-slime-world-managera: '&c✗ Brak Slime World Managera'
+    brak-zmian-do-publikacji: '&a✓ Brak zmian do publikacji'
+    brakuje-elementow: '&c✗ Brakuje {VALUE1} elementow'
+    czasy-faz: '&6&lCZASY FAZ'
+    czasy-faz-dostepne: Czasy faz dostepne
+    czysty-szablon-mapy-istnieje: '&a✓ Czysty szablon mapy istnieje'
+    diamenty: '&7Diamenty: &f{VALUE1}'
+    diamenty-ii: '&7Diamenty II: &f{VALUE1}'
+    druzyny: '&e&lDRUZYNY'
+    generatory: '&b&lGENERATORY'
+    glowne-lobby-jest-na-innym-swiecie: '&a✓ Glowne lobby jest na innym swiecie'
+    glowne-lobby-musi-byc-na-innym: '&c✗ Glowne lobby musi byc na innym swiecie'
+    glowne-lobby-poprawne: '&a✓ Glowne lobby poprawne'
+    graczy-w-druzynie: '&7Graczy w druzynie: &f{VALUE1}'
+    i-bedzie-automatycznie-odswiezana-po-meczach: '&7i bedzie automatycznie odswiezana po meczach.'
+    i-jeszcze: '&8... i jeszcze {VALUE1}'
+    i-ladowany-od-nowa-z-czystego: '&7i ladowany od nowa z czystego szablonu.'
+    kliknij-a-potem-potwierdz-drugim-kliknieciem: '&aKliknij, a potem potwierdz drugim kliknieciem.'
+    kliknij-aby-dostac-pelny-raport-na: '&eKliknij, aby dostac pelny raport na czacie.'
+    kliknij-aby-edytowac: '&eKliknij, aby edytowac'
+    kliknij-aby-przejsc-do-kroku-1: '&eKliknij, aby przejsc do kroku 1'
+    kliknij-aby-przejsc-do-kroku-2: '&eKliknij, aby przejsc do kroku 2'
+    kliknij-aby-przejsc-do-kroku-3: '&eKliknij, aby przejsc do kroku 3'
+    kliknij-aby-przejsc-do-kroku-4: '&eKliknij, aby przejsc do kroku 4'
+    kliknij-aby-teleportowac: '&eKliknij, aby teleportowac'
+    kliknij-aby-zakonczyc: '&eKliknij, aby zakonczyc'
+    kliknij-jeszcze-raz-w-ciagu-10: '&eKliknij jeszcze raz w ciagu 10 sekund.'
+    konfiguracja-kompletna: '&a✓ Konfiguracja kompletna'
+    konfigurator-mapy: '&6&lKONFIGURATOR MAPY'
+    krok-1-ukonczony: Krok 1 ukonczony
+    krok-1-wymaga-ustawienia: Krok 1 wymaga ustawienia
+    krok-2-ukonczony: Krok 2 ukonczony
+    krok-2-wymaga-ustawienia: Krok 2 wymaga ustawienia
+    krok-3-ukonczony: Krok 3 ukonczony
+    krok-3-wymaga-ustawienia: Krok 3 wymaga ustawienia
+    krok-4-ukonczony: Krok 4 ukonczony
+    krok-4-wymaga-ustawienia: Krok 4 wymaga ustawienia
+    mapa: '&7Mapa: &f{MAP}'
+    mapa-gotowa: '&a&l✓ MAPA GOTOWA'
+    mapa-nie-jest-jeszcze-gotowa: '&c✗ Mapa nie jest jeszcze gotowa.'
+    mapa-zostanie-zapisana-jako-czysty-szablon: '&7Mapa zostanie zapisana jako czysty szablon'
+    minimalnie-graczy: '&7Minimalnie graczy: &f{VALUE1}'
+    mozesz-przejsc-do-publikacji-mapy: '&7Mozesz przejsc do publikacji mapy.'
+    na-koncu-uzyj-zatwierdz-mape: '&fNa koncu uzyj &aZATWIERDZ MAPE&f.'
+    nagla-smierc: '&7Nagla smierc: &f{VALUE1}'
+    najpierw-popraw-czerwone-bledy: Najpierw popraw czerwone bledy
+    najpierw-wykonaj-kroki-oznaczone-na-czerwono: '&7Najpierw wykonaj kroki oznaczone na czerwono.'
+    najprosciej-klikaj-po-kolei-kroki-1: '&fNajprosciej: klikaj po kolei kroki &e1 → 6&f.'
+    najwazniejsze-braki: '&7Najwazniejsze braki:'
+    nastepny-krok: '&e&lNASTEPNY KROK'
+    nastepny-krok-zatwierdz-mape: '&a&lNASTEPNY KROK: ZATWIERDZ MAPE'
+    nie-masz-nieopublikowanych-zmian: '&aNie masz nieopublikowanych zmian.'
+    nie-mozna-jeszcze-zatwierdzic: '&c&lNIE MOZNA JESZCZE ZATWIERDZIC'
+    nie-musisz-wpisywac-zadnych-dodatkowych-komend: '&aNie musisz wpisywac zadnych dodatkowych komend.'
+    nie-wykryto-slime-world-managera: '&c✗ Nie wykryto Slime World Managera.'
+    oba-typy-generatorow-ustawione: '&a✓ Oba typy generatorow ustawione'
+    odrodzenie-s: '&7Odrodzenie: &f{VALUE1} s'
+    ostatni-krok-konfiguracji: '&7Ostatni krok konfiguracji.'
+    po-kazdym-meczu-swiat-jest-wyrzucany: '&7Po kazdym meczu swiat jest wyrzucany'
+    poczekalnia-mapy: Poczekalnia mapy
+    pomoc-co-mam-robic: '&f&lPOMOC - CO MAM ROBIC?'
+    potrzebujesz-po-4-npc-kazdego-typu: '&c✗ Potrzebujesz po 4 NPC kazdego typu'
+    potwierdz-publikacje: '&6&l⚠ POTWIERDZ PUBLIKACJE'
+    przenosi-na-domyslny-spawn-edytowanej-mapy: '&7Przenosi na domyslny spawn edytowanej mapy.'
+    punkty-glowne: '&b&lPUNKTY GLOWNE'
+    sa-niezapisane-zmiany-do-publikacji: '&e● Sa niezapisane zmiany do publikacji'
+    shift-klik-wyjdz-mimo-zmian: '&eShift + klik = wyjdz mimo zmian'
+    sklepy-dla-wszystkich-baz-ustawione: '&a✓ Sklepy dla wszystkich baz ustawione'
+    sklepy-npc: '&a&lSKLEPY NPC'
+    sklepy-przedmiotow-4: '&7Sklepy przedmiotow: &f{VALUE1}&7 / 4'
+    sklepy-ulepszen-4: '&7Sklepy ulepszen: &f{VALUE1}&7 / 4'
+    slime-world-manager-dziala: '&a✓ Slime World Manager dziala'
+    spawn-lozko-generator-bazy-i-strefa: '&7Spawn, lozko, generator bazy i strefa ochronna.'
+    spawn-obserwatorow: Spawn obserwatorow
+    sprawdz-mape: '&c&l✗ SPRAWDZ MAPE'
+    sprawdz-slime-world-manager-i-lobby: Sprawdz Slime World Manager i lobby
+    swiat-edycyjny: '&7Swiat edycyjny: &f{WORLD}'
+    system-map-gotowy: '&a&lSYSTEM MAP GOTOWY'
+    system-map-gotowy-2: System map gotowy
+    system-map-niedostepny: '&c&lSYSTEM MAP NIEDOSTEPNY'
+    szablon-utworzy-sie-przy-zatwierdzaniu: '&e• Szablon utworzy sie przy zatwierdzaniu'
+    szmaragdy: '&7Szmaragdy: &f{VALUE1}'
+    teleport-na-spawn-swiata: '&e&lTELEPORT NA SPAWN SWIATA'
+    text: '&c• &7{PROBLEM}'
+    text-2: ''
+    to-zapisze-czysty-szablon-mapy: '&7To zapisze czysty szablon mapy.'
+    ustaw-co-najmniej-po-1-generatorze: '&c✗ Ustaw co najmniej po 1 generatorze'
+    ustaw-glowne-lobby-na-innym-swiecie: '&c✗ Ustaw glowne lobby na innym swiecie'
+    ustawienia-gry-dostepne: Ustawienia gry dostepne
+    ustawienia-rozgrywki: '&c&lUSTAWIENIA ROZGRYWKI'
+    uwaga-masz-nieopublikowane-zmiany: '&cUwaga: masz nieopublikowane zmiany.'
+    walidacja-zaliczona: Walidacja zaliczona
+    wersja: '&7Wersja: &f{VALUE1} {VALUE2}'
+    wraca-do-glownego-lobby-serwera: '&7Wraca do glownego lobby serwera.'
+    wszystkie-wymagane-elementy-sa-ustawione: '&a✓ Wszystkie wymagane elementy sa ustawione.'
+    wyjdz-z-konfiguratora: '&c&lWYJDZ Z KONFIGURATORA'
+    zatwierdz-mape: '&a&l✓ ZATWIERDZ MAPE'
+    zniszczenie-lozek: '&7Zniszczenie lozek: &f{VALUE1}'
+  progress-pane:
+    ten-etap-jest-ukonczony: '&7Ten etap jest ukonczony.'
+    ten-etap-wymaga-uwagi: '&7Ten etap wymaga uwagi.'
+    text: '&a✓ '
+    text-2: '&c✗ '
+    text-3: '{VALUE1}&f{STEP}'
+  send-validation:
+    mapa-nie-jest-kompletna-brakuje: '&cMapa nie jest kompletna. Brakuje:'
+    sprawdzanie-mapy: '&e&lSPRAWDZANIE MAPY &f{MAP}'
+    text: '&8&m------------------------------------------------'
+    text-2: '&c• &7{PROBLEM}'
+    wszystko-jest-ustawione-mapa-jest-gotowa: '&a✓ Wszystko jest ustawione. Mapa jest gotowa do gry.'
+  status-pane:
+    do-zrobienia: '&c&l✗ DO ZROBIENIA'
+    gotowe: '&a&l✓ GOTOWE'
+  status:
+    nie-ustawiono: '&c✗ NIE USTAWIONO'
+    text: '&a✓ {VALUE1}, {VALUE2}, {VALUE3}'
+    text-2: ''
+  step-item:
+    ten-krok-jest-gotowy: '&a✓ TEN KROK JEST GOTOWY'
+    ten-krok-wymaga-ustawienia: '&c✗ TEN KROK WYMAGA USTAWIENIA'
+    text: '&8[&f{NUMBER}&8] {NAME}'
+  team-progress:
+    elementow-baz-ustawionych: '{VALUE1}/{TOTAL} elementow baz ustawionych'
+    text: '&a✓ '
+  team-state:
+    generator-bazy: Generator bazy
+    strefa-bez-budowania: Strefa bez budowania
+  use-tool:
+    brak-wybranej-mapy-uzyj-konfiguruj-nazwa: '&cBrak wybranej mapy. Uzyj &f/konfiguruj <nazwa_mapy>&c.'
+    diamentow: '&bdiamentow'
+    kliknij-ppm-kilofem-bezposrednio-w-odpowiedni: '&eKliknij PPM kilofem bezposrednio w odpowiedni blok.'
+    strefa-gotowa-zaznaczony-prostokat-jest-chroniony: '&a&lSTREFA GOTOWA &7- zaznaczony prostokat jest chroniony pionowo na calej wysokosci
+      mapy.'
+    szmaragdow: '&2szmaragdow'
+    to-nie-jest-lozko-kliknij-ppm: '&cTo nie jest lozko. Kliknij PPM bezposrednio w blok lozka.'
+    ustawiono-generator: '&a&lUSTAWIONO GENERATOR &7- {VALUE1}&a.'
+    ustawiono-generator-bazy: '&a&lUSTAWIONO GENERATOR BAZY &7- {VALUE1}{TEAM}&a.'
+    ustawiono-lozko: '&a&lUSTAWIONO LOZKO &7- {VALUE1}{TEAM}&a.'
+    ustawiono-punkt-strefy-bez-budowania-druzyny: '&aUstawiono &fpunkt {VALUE1} &astrefy bez budowania druzyny {VALUE2}{TEAM}&a.'
+    ustawiono-sklep-z-przedmiotami: '&a&lUSTAWIONO SKLEP Z PRZEDMIOTAMI'
+    ustawiono-ulepszenia-druzyny: '&a&lUSTAWIONO ULEPSZENIA DRUZYNY'
+    w-tym-miejscu-jest-juz-generator: '&cW tym miejscu jest juz generator tego typu. Niczego nie dodano.'
+    w-tym-miejscu-jest-juz-taki: '&cW tym miejscu jest juz taki sklep. Niczego nie dodano.'
+configuration:
+  labels:
+    bed: Lozko
+    spawn: Spawn
+  reload-failed: '&cNie udalo sie przeladowac konfiguracji: {ERROR}. Poprzednie ustawienia pozostaja aktywne.'
+  reloaded: '&aPrzeladowano config.yml i messages.yml.'
+  ui-refresh-failed: 'Konfiguracja przeladowana, ale nie udalo sie odswiezyc UI: {ERROR}'
+configure-command:
+  on-command:
+    bukkit-nie-zaladowal-swiata: '&cBukkit nie zaladowal swiata &f{MAP_NAME}&c.'
+    diamentowy-kilof-otwiera-menu-prawym-przyciskiem: '&bDiamentowy kilof &7otwiera menu prawym przyciskiem.'
+    konfigurator-bedwars: '&e&lKONFIGURATOR BEDWARS'
+    konfigurator-uruchomiony: '&a&lKONFIGURATOR URUCHOMIONY'
+    konfiguruj: '&a/konfiguruj {MAP_NAME}'
+    konfiguruj-nazwa-mapy: '&a/konfiguruj <nazwa_mapy>'
+    ladowanie-swiata: '&eLadowanie swiata &f{MAP_NAME}&e...'
+    mapa: '&7Mapa: &f{MAP}'
+    najpierw-zakoncz-rozgrywke-przez-bw-zatrzymaj: '&7Najpierw zakoncz rozgrywke przez &f/bw zatrzymaj&7 albo &f/bw reset&7.'
+    nie-konfiguruj-swiata-runtime-template-podaj: '&cNie konfiguruj swiata runtime/template. Podaj nazwe zwyklego folderu zrodlowego
+      mapy.'
+    nie-ma-poprawnego-folderu-swiata-z: '&7Nie ma poprawnego folderu swiata z level.dat: &f{MAP_NAME}'
+    nie-masz-uprawnien-do-konfiguracji-bedwars: '&cNie masz uprawnien do konfiguracji BedWars.'
+    nie-mozna-edytowac-mapy-podczas-trwajacego: '&cNie mozna edytowac mapy podczas trwajacego meczu.'
+    nie-musisz-znac-zadnych-komend-ustaw: '&7Nie musisz znac zadnych komend. Ustaw wszystko z GUI.'
+    nie-udalo-sie-zaladowac-mapy-szczegoly: '&cNie udalo sie zaladowac mapy. Szczegoly sa w konsoli.'
+    nie-udalo-sie-zaladowac-swiata: 'Nie udalo sie zaladowac swiata {MAP_NAME}: {ERROR}'
+    nie-znaleziono-poprawnej-mapy: '&c&lNIE ZNALEZIONO POPRAWNEJ MAPY'
+    nieprawidlowa-nazwa-mapy-uzywaj-tylko-liter: '&cNieprawidlowa nazwa mapy. Uzywaj tylko liter, cyfr, kropki, _ i -.'
+    przyklad-konfiguruj-rooftop: '&7Przyklad: &f/konfiguruj rooftop'
+    tej-komendy-moze-uzyc-tylko-gracz: '&cTej komendy moze uzyc tylko gracz.'
+    text: '&8&m------------------------------------------------'
+    uwaga-brak-continued-slime-world-manager: '&cUWAGA: brak Continued Slime World Manager. Konfiguracje mozesz zrobic, ale mapa nie
+      bedzie mogla zostac zatwierdzona.'
+    wpisz-tylko-nazwe-folderu-mapy: '&fWpisz tylko nazwe folderu mapy:'
+    wrzuc-mape-obok-folderu-world-i: '&7Wrzuc mape obok folderu &fworld&7 i ponownie wpisz:'
+currency:
+  diamond: diamentow
+  editor-diamond: diamenty
+  editor-emerald: szmaragdy
+  editor-gold: zloto
+  editor-iron: zelazo
+  emerald: szmaragdow
+  gold: zlota
+  iron: zelaza
+death:
+  final: ' &b&lFINALNE ZABOJSTWO!'
+  killer: ' z reki {COLOR}{PLAYER}&7.'
+diagnostics:
+  duration: '{HOURS}h {MINUTES}m {SECONDS}s'
+  gc: '{COUNT} operacji / {MILLIS} ms'
+  tps-source: pomiar BedWars, do {SECONDS} s
+  unavailable: n/d
+game:
+  activate-trap:
+    uruchomiono-pulapke-uruchomiona-przez: '&c&lURUCHOMIONO PULAPKE! &f{TEAM} uruchomiona przez {PLAYER}!'
+  admin-remove-bed:
+    admin-usunal-lozko-druzyny: '&6[ADMIN] &f{PLAYER} &eusunal lozko druzyny {VALUE2}{TEAM}&e.'
+  break-block:
+    nie-mozesz-zniszczyc-wlasnego-lozka: '&cNie mozesz zniszczyc wlasnego lozka!'
+  broadcast-top-players:
+    text: '&7{VALUE1}. {VALUE2}{VALUE3} &f- &a{VALUE4}'
+    top-3-finalne-zabojstwa: '&e&lTOP 3 - FINALNE ZABOJSTWA'
+  bucket:
+    w-tym-miejscu-nie-mozna-budowac: '&cW tym miejscu nie mozna budowac ani wylewac plynow.'
+  check-eliminations:
+    druzyna-wyeliminowana-zostali-wyeliminowani: '&f&lDRUZYNA WYELIMINOWANA > {VALUE1}{TEAM} &czostali wyeliminowani!'
+  check-winner:
+    wygrywaja-mecz: '&6&l{VALUE1} {VALUE2}&l{TEAM} &ewygrywaja mecz!'
+  destroy-bed:
+    nie-mozesz-zniszczyc-wlasnego-lozka: '&cNie mozesz zniszczyc wlasnego lozka!'
+    zniszczenie-lozka-lozko-zniszczyl: '&f&lZNISZCZENIE LOZKA > {VALUE1}{TEAM} &7- lozko zniszczyl {VALUE3}{PLAYER}&7!'
+  drop:
+    nie-mozesz-wyrzucac-stalych-przedmiotow: '&cNie mozesz wyrzucac stalych przedmiotow.'
+  enter-waiting:
+    dolaczyles-do-meczu-turniejowego: '&aDolaczyles do meczu turniejowego{TEAM}'
+    jako: ' jako {VALUE1}{TEAM}&a.'
+  event-announcements:
+    generatory-diamentow-zostaly-ulepszone-do-poziomu: '&bGeneratory diamentow &ezostaly ulepszone do poziomu II!'
+    generatory-diamentow-zostaly-ulepszone-do-poziomu-2: '&bGeneratory diamentow &ezostaly ulepszone do poziomu III!'
+    generatory-szmaragdow-zostaly-ulepszone-do-poziomu: '&2Generatory szmaragdow &ezostaly ulepszone do poziomu II!'
+    generatory-szmaragdow-zostaly-ulepszone-do-poziomu-2: '&2Generatory szmaragdow &ezostaly ulepszone do poziomu III!'
+    wszystkie-lozka-zostaly-zniszczone: '&c&lWSZYSTKIE LOZKA ZOSTALY ZNISZCZONE!'
+  expire-reconnects:
+    finalne-zabojstwo: '{VALUE1} &b&lFINALNE ZABOJSTWO!'
+    zostal-wyeliminowany-po-przekroczeniu-czasu-na: ' &7zostal wyeliminowany po przekroczeniu czasu na ponowne polaczenie.'
+    zostal-wyeliminowany-za-rozlaczenie-podczas-naglej: ' &7zostal wyeliminowany za rozlaczenie podczas naglej smierci.'
+  finished:
+    nie-udalo-sie-zaladowac-mapy-turniejowej: '&cNie udalo sie zaladowac mapy turniejowej. Administrator powinien sprawdzic konsole.'
+  force-start:
+    nie-mozna-wystartowac-mapa-niekompletna-albo: '&cNie mozna wystartowac: mapa niekompletna albo mniej niz 2 druzyny w poczekalni.'
+  handle-death:
+    zginal: '{VICTIM} &7zginal{KILLER}{VALUE3}'
+  interact:
+    straznik-snow: '{VALUE1}Straznik snow - {PLAYER}'
+  join-observation:
+    brak-uprawnien: '&cBrak uprawnien.'
+    jestes-zawodnikiem-tego-meczu-obserwacja-jest: '&cJestes zawodnikiem tego meczu. Obserwacja jest dostepna po eliminacji.'
+    obecnie-nie-trwa-zaden-mecz-do: '&cObecnie nie trwa zaden mecz do obserwowania.'
+    swiat-meczu-nie-jest-gotowy-do: '&cSwiat meczu nie jest gotowy do obserwowania.'
+    tryb-obserwacji-wlaczony-kompas-zawodnicy-komparator: '&aTryb obserwacji wlaczony. &7Kompas: zawodnicy, komparator: swobodny lot,
+      lozko lub /bw opusc: lobby.'
+  join-waiting:
+    aktualna-mapa-nie-jest-jeszcze-gotowa: '&cAktualna mapa nie jest jeszcze gotowa do gry.'
+    brak-wolnego-miejsca-w-druzynach: '&cBrak wolnego miejsca w druzynach.'
+    mecz-juz-trwa-poczekaj-na-nastepna: '&cMecz juz trwa. Poczekaj na nastepna rozgrywke.'
+    nie-ustawiono-aktywnej-mapy-turniejowej: '&cNie ustawiono aktywnej mapy turniejowej.'
+    przygotowuje-swieza-kopie-mapy-to-potrwa: '&ePrzygotowuje swieza kopie mapy... &7To potrwa chwile.'
+    text: '&c{ERROR}'
+  join:
+    stanowisko: '&a[+] &fstanowisko'
+  leave-observation:
+    zakonczono-obserwacje-meczu: '&eZakonczono obserwacje meczu.'
+  leave-waiting:
+    nie-mozesz-opuscic-kolejki-bo-mecz: '&cNie mozesz opuscic kolejki, bo mecz juz trwa.'
+    opusciles-poczekalnie-meczu: '&eOpusciles poczekalnie meczu.'
+  next-event-text:
+    diamenty-ii: Diamenty II
+    diamenty-iii: Diamenty III
+    nagla-smierc: Nagla smierc
+    szmaragdy-ii: Szmaragdy II
+    szmaragdy-iii: Szmaragdy III
+    walka-o-zwyciestwo: '&cWalka o zwyciestwo!'
+    za: '{VALUE1} za &a{VALUE2}:{VALUE3}{VALUE4}'
+    zamkniecie-bordera-za: Zamkniecie bordera za &a{VALUE1}:{VALUE2}{VALUE3}
+    zniszczenie-lozek: Zniszczenie lozek
+  on-join:
+    wrociles-do-trwajacego-meczu: '&aWrociles do trwajacego meczu.'
+  pause:
+    mecz-wstrzymany-przez-administratora: '&e&lMECZ WSTRZYMANY &7przez administratora.'
+  place:
+    osiagnales-limit-wysokosci-budowania: '&cOsiagnales limit wysokosci budowania.'
+    w-tej-strefie-bazy-nie-mozna: '&cW tej strefie bazy nie mozna stawiac blokow.'
+  reset:
+    przygotowywanie-swiezej-kopii-mapy: '&7Przygotowywanie swiezej kopii mapy...'
+  resume:
+    mecz-wznowiony: '&a&lMECZ WZNOWIONY'
+  set-magic-milk:
+    magiczne-mleko-aktywne-przez-s: '&fMagiczne mleko aktywne przez &a{SECONDS} s&f.'
+  spawn-player:
+    odrodziles-sie-s-ochrony: '&aOdrodziles sie! &7({VALUE1} s ochrony)'
+  spawn-sudden-death:
+    nagla-smierc-smoki-i-kurczacy-sie: '&4&lNAGLA SMIERC! &cSmoki i kurczacy sie border! Kierujcie sie na srodek mapy!'
+  start-countdown:
+    mecz-rozpocznie-sie-za-s: '&eMecz rozpocznie sie za &c{COUNTDOWN} &es!'
+  start-game:
+    bed-wars: '&a&lBED WARS'
+    chron-swoje-lozko-i-niszcz-lozka: '&eChron swoje lozko i niszcz lozka przeciwnikow. Wyeliminuj wszystkie wrogie druzyny, aby wygrac!'
+    start-meczu-anulowany-mapa-nie-jest: '&cStart meczu anulowany: mapa nie jest gotowa, runtime nie zostal zaladowany albo druzyny
+      sa niekompletne.'
+  stop-game:
+    mecz-zostal-zatrzymany-przez-administratora: '&cMecz zostal zatrzymany przez administratora.'
+  tick-respawns:
+    odrodzisz-sie-za-s: '&eOdrodzisz sie za &c{LEFT}&e s!'
+  tick:
+    mecz-rozpocznie-sie-za: '&eMecz rozpocznie sie za &c{COUNTDOWN}&e...'
+    odliczanie-zostalo-anulowane-poczekalnia-nie-jest: '&cOdliczanie zostalo anulowane - poczekalnia nie jest gotowa.'
+generator:
+  update:
+    diament: '&b&lDIAMENT'
+    pojawi-sie-za-s: '&fPojawi sie za &e{SECONDS} &fs'
+    poziom: '&e&lPOZIOM {VALUE1}'
+    szmaragd: '&2&lSZMARAGD'
+height-penalty:
+  warning: '&cLimit wysokosci: zejdz ponizej Y={Y}! Tracisz {DAMAGE} HP/s.'
+invisibility:
+  prepare-reflection:
+    brak-zgodnego-packetu-wyposazenia-dla-niewidzialnosci: 'Brak zgodnego packetu wyposazenia dla niewidzialnosci: {VALUE1}: {ERROR}'
+  send-equipment:
+    nie-udalo-sie-ukrywac-zbroi-podczas: 'Nie udalo sie ukrywac zbroi podczas niewidzialnosci: {VALUE1}: {ERROR}'
+lobby:
+  give-join-item:
+    do-poczekalni-aktualnego-meczu-bedwars: '&7do poczekalni aktualnego meczu BedWars.'
+    dolacz-do-meczu-turniejowego-ppm: '&a&lDolacz do meczu turniejowego &7(PPM)'
+    kliknij-prawym-przyciskiem-aby-wejsc: '&7Kliknij prawym przyciskiem, aby wejsc'
+  give-leave-item:
+    kliknij-prawym-przyciskiem-aby-opuscic: '&7Kliknij prawym przyciskiem, aby opuscic'
+    poczekalnie-meczu: '&7poczekalnie meczu.'
+    wroc-do-lobby-ppm: '&c&lWroc do lobby &7(PPM)'
+match-logger:
+  ensure-header:
+    nie-mozna-utworzyc-historia-meczow-csv: 'Nie mozna utworzyc historia-meczow.csv: {ERROR}'
+  finish:
+    brak: brak
+    brak-2: BRAK
+    nie-mozna-zapisac-historii-meczu: 'Nie mozna zapisac historii meczu: {ERROR}'
+    yyyy-mm-dd-hh-mm-ss: yyyy-MM-dd HH:mm:ss
+menus:
+  configuration:
+    generators:
+      title: '&8BedWars • Generatory'
+    main:
+      title: '&8BedWars • Konfigurator'
+    points:
+      title: '&8BedWars • Punkty glowne'
+    settings:
+      title: '&8BedWars • Ustawienia'
+    shops:
+      title: '&8BedWars • Sklepy'
+    team:
+      title: '&8BedWars • Druzyna'
+    teams:
+      title: '&8BedWars • Druzyny'
+    timers:
+      title: '&8BedWars • Czasy faz'
+  shop:
+    title: '&8Sklep - {CATEGORY}'
+  spectator:
+    title: '&8Teleporter obserwatora'
+  upgrades:
+    title: '&8Ulepszenia druzyny i pulapki'
+mobs:
+  bedbug:
+    name: '{COLOR}Pluskwa - {PLAYER}'
+  dragon:
+    name: '{COLOR}Smok - {TEAM}'
+npc:
+  items:
+    name: '&b&lSKLEP Z PRZEDMIOTAMI &7(PPM)'
+  respawn:
+    npc-sklepow-utworzono: 'NPC sklepow: utworzono {VALUE1} / {VALUE2}.'
+  spawn:
+    nie-udalo-sie-zespawnowac-npc-sklepu: 'Nie udalo sie zespawnowac NPC sklepu: {VALUE1} - {ERROR}'
+  upgrades:
+    name: '&b&lULEPSZENIA DRUZYNY &7(PPM)'
+party-color-menu:
+  click:
+    text: '&c{ERROR}'
+  open:
+    aktywny: '&a&lAKTYWNY'
+    automatyczny-kolor: '&eAutomatyczny kolor'
+    cale-party-otrzyma-ten-kolor: '&7Cale party otrzyma ten kolor'
+    kliknij-aby-wybrac-ten-kolor: '&7Kliknij, aby wybrac ten kolor.'
+    kliknij-aby-zatwierdzic: '&eKliknij, aby zatwierdzic.'
+    kolor-wybiera-lider-party: '&cKolor wybiera lider party.'
+    party-trafi-razem-do-wolnej-druzyny: '&7Party trafi razem do wolnej druzyny.'
+    party-wybor-koloru: '&8Party - wybor koloru'
+    pelna-druzyna-brak-dolaczenia: '&7Pelna druzyna = brak dolaczenia.'
+    takze-w-kolejnych-meczach: '&7takze w kolejnych meczach.'
+    text: ' '
+    text-2: '{VALUE1}&l{TEAM}'
+    usun-staly-wybor-koloru: '&7Usun staly wybor koloru.'
+    wybrany-kolor-party: '&a&lWYBRANY KOLOR PARTY'
+    zajete-miejsca: '&7Zajete miejsca: &f{USED}/{VALUE2}'
+party-command:
+  help:
+    party-akceptuj-przyjmij-zaproszenie: '&e/party akceptuj &7- przyjmij zaproszenie'
+    party-kolor-wybierz-staly-kolor-party: '&e/party kolor &7- wybierz staly kolor party w GUI'
+    party-komendy: '&6&lPARTY &7- komendy'
+    party-lista-pokaz-party: '&e/party lista &7- pokaz party'
+    party-opusc-opusc-party: '&e/party opusc &7- opusc party'
+    party-rozwiaz-lider-rozwiazuje-party: '&e/party rozwiaz &7- lider rozwiazuje party'
+    party-trafia-razem-do-tej-samej: '&7Party trafia razem do tej samej druzyny BedWars.'
+    party-wyrzuc-nick-lider-wyrzuca-gracza: '&e/party wyrzuc <nick> &7- lider wyrzuca gracza'
+    party-zapros-nick-zapros-gracza: '&e/party zapros <nick> &7- zapros gracza'
+    text: '&8&m----------------------------------------'
+  on-command:
+    party-wyrzuc-nick: '&e/party wyrzuc <nick>'
+    party-zapros-nick: '&e/party zapros <nick>'
+    ta-komenda-jest-tylko-dla-gracza: '&cTa komenda jest tylko dla gracza.'
+    text: '&c{RESULT}'
+    text-2: '&e{RESULT}'
+party:
+  accept:
+    lider-party-jest-offline: Lider party jest offline.
+    najpierw-opusc-obecne-party: Najpierw opusc obecne party.
+    nie-masz-aktywnego-zaproszenia-do-party: Nie masz aktywnego zaproszenia do party.
+    party-dolaczyl-do-party: '&6&lPARTY &8» &a{PLAYER} &7dolaczyl do party.'
+    party-jest-juz-pelne: Party jest juz pelne.
+  assign-for-queue:
+    brak-aktywnej-mapy: Brak aktywnej mapy.
+    brak-druzyny-z-miejscem-dla-calego: Brak druzyny z miejscem dla calego party.
+    brak-miejsca-dla-calego-party-w: Brak miejsca dla calego party w kolorze {VALUE1}{TEAM}&c. Poczekaj na wolne miejsce lub zmien /party
+      kolor.
+    nie-udalo-sie-przypisac-calego-party: Nie udalo sie przypisac calego party.
+    party-ma-za-duzo-osob-druzyna: Party ma za duzo osob. Druzyna miesci tylko {LIMIT}.
+    party-party-zostalo-przydzielone-do: '&6&lPARTY &8» &7Party zostalo przydzielone do {VALUE1}{TEAM}&7.'
+  disband:
+    nie-jestes-w-party: Nie jestes w party.
+    party-party-zostalo-rozwiazane: '&6&lPARTY &8» &cParty zostalo rozwiazane.'
+    tylko-lider-party-moze-rozwiazac-party: Tylko lider party moze rozwiazac party.
+  invite:
+    nie-mozesz-zaprosic-samego-siebie: '&cNie mozesz zaprosic samego siebie.'
+    nie-znaleziono-gracza: '&cNie znaleziono gracza.'
+    party-jest-pelne-dla-aktualnego-rozmiaru: '&cParty jest pelne dla aktualnego rozmiaru druzyny.'
+    party-zaprosil-cie-do-party: '&6&lPARTY &8» &e{PLAYER} &7zaprosil Cie do party.'
+    ten-gracz-jest-juz-w-innym: '&cTen gracz jest juz w innym party.'
+    ten-gracz-jest-juz-w-twoim: '&cTen gracz jest juz w twoim party.'
+    tylko-lider-party-moze-zapraszac: '&cTylko lider party moze zapraszac.'
+    wpisz-party-akceptuj-w-ciagu-60: '&eWpisz &f/party akceptuj &ew ciagu {SECONDS} sekund.'
+    zaproszono-gracza-do-party: '&aZaproszono gracza &f{PLAYER}&a do party.'
+  kick:
+    nie-jestes-w-party: Nie jestes w party.
+    party-zostal-wyrzucony-z-party: '&6&lPARTY &8» &e{PLAYER} &7zostal wyrzucony z party.'
+    party-zostales-wyrzucony-z-party: '&6&lPARTY &8» &cZostales wyrzucony z party.'
+    ten-gracz-nie-jest-w-twoim: Ten gracz nie jest w twoim party.
+    tylko-lider-party-moze-wyrzucac-graczy: Tylko lider party moze wyrzucac graczy.
+    uzyj-party-opusc-albo-party-rozwiaz: Uzyj /party opusc albo /party rozwiaz.
+  leave:
+    nie-jestes-w-party: Nie jestes w party.
+    opusciles-party: Opusciles party.
+    party-opuscil-party: '&6&lPARTY &8» &e{PLAYER} &7opuscil party.'
+    party-opuscil-party-nowy-lider: '&6&lPARTY &8» &e{PLAYER} &7opuscil party. Nowy lider: &f{PLAYER2}&7.'
+  select-color:
+    automatyczny: '&eAutomatyczny'
+    kolor-party-mozna-zmienic-tylko-przed: Kolor party mozna zmienic tylko przed rozpoczeciem meczu.
+    nie-jestes-w-party: Nie jestes w party.
+    party-kolor-party: '&6&lPARTY &8» &7Kolor party: {TEAM}&7.'
+    ten-kolor-bedzie-wybierany-w-kazdym: '&7Ten kolor bedzie wybierany w kazdym kolejnym meczu tego party.'
+    tylko-lider-party-moze-wybierac-kolor: Tylko lider party moze wybierac kolor.
+    w-wybranym-kolorze-nie-ma-miejsca: W wybranym kolorze nie ma miejsca dla calego party. Przydzial nie zostal zmieniony.
+  send-info:
+    automatyczny: '&7Automatyczny'
+    gracze: '&eGracze: {VALUE1}'
+    klikniecie-kompasu-przez-dowolna-osobe-z: '&7Klikniecie kompasu przez dowolna osobe z party'
+    kolor-party: '&eKolor party: {TEAM}'
+    lider: '&eLider: &f{VALUE1}'
+    lider-wybiera-kolor-przez-party-kolor: '&7Lider wybiera kolor przez &e/party kolor&7.'
+    party: '&6&lPARTY &7({VALUE1}/{VALUE2})'
+    party-nie-jestes-w-party: '&6&lPARTY &8» &7Nie jestes w party.'
+    probuje-wrzucic-wszystkich-online-do-tej: '&7probuje wrzucic wszystkich online do tej samej druzyny.'
+    text: '&8&m----------------------------------------'
+    text-2: '&7, '
+scoreboard:
+  health: '&c❤'
+  layouts:
+    countdown:
+    - '&7{DATE}'
+    - ''
+    - '&fStart za &a{SECONDS} s'
+    - ''
+    - '{TEAMS}'
+    - ''
+    - '&e{SERVER}'
+    paused:
+    - '&7{DATE}'
+    - ''
+    - '&c&lMECZ WSTRZYMANY'
+    - '&f{NEXT_EVENT}'
+    - '{OBSERVER}'
+    - '{TEAMS}'
+    - ''
+    - '&e{SERVER}'
+    running:
+    - '&7{DATE}'
+    - '&f{NEXT_EVENT}'
+    - '{OBSERVER}'
+    - '{TEAMS}'
+    - '{WATCHING}'
+    - ''
+    - '&fZabojstwa: &a{KILLS}'
+    - '&fFinalne zabojstwa: &a{FINAL_KILLS}'
+    - '&fZniszczone lozka: &a{BEDS}'
+    - ''
+    - '&e{SERVER}'
+    waiting:
+    - '&7{DATE}'
+    - ''
+    - '&fMapa: &a{MAP}'
+    - '&fGracze: &a{PLAYERS}/{MAX_PLAYERS}'
+    - '&fOczekiwanie na graczy...'
+    - ''
+    - '&e{SERVER}'
+  name-prefix: '{COLOR}{SHORT} '
+  status:
+    alive: '&e{ALIVE}'
+    bed: '&a✔'
+    eliminated: '&c✘'
+    empty: '&8brak graczy'
+  team: '{COLOR}{SHORT} {TEAM}&f: {STATUS}{YOU}'
+  title: '&e&lBED WARS'
+  you: ' &7TY'
+server-diagnostics:
+  send:
+    border-x-srodek: '&eBorder: &f{VALUE1} x {VALUE2} &7(srodek {VALUE3}, {VALUE4})'
+    brak-uprawnien: '&cBrak uprawnien.'
+    cpu-glownego-watku-wzgledem-1-rdzenia: '&eCPU glownego watku: &f{VALUE1} &7(wzgledem 1 rdzenia)'
+    cpu-jvm-system-rdzeni-logicznych: '&eCPU JVM / system: &f{VALUE1} / {VALUE2} &7({VALUE3} rdzeni logicznych)'
+    czas-meczu-obserwatorzy-bloki-graczy: '&eCzas meczu: &f{VALUE1} &8| &eObserwatorzy: &f{SPECTATORS} &8| &eBloki graczy: &f{VALUE3}'
+    gc-od-startu-watki-jvm: '&eGC od startu: &f{VALUE1} &8| &eWatki JVM: &f{VALUE2}'
+    graczy-chunkow-encji-dropow: '&7- &f{PLAYER}&7: {VALUE2} graczy, {CHUNK_COUNT} chunkow, {ENTITY_COUNT} encji ({ITEM_COUNT} dropow)'
+    java-system: '&eJava: &f{VALUE1} &8| &eSystem: &f{PLAYER} {VALUE3}'
+    odstep-tickow-sr-max-10-s: '&eOdstep tickow sr./max (10 s): &f{VALUE1} / {VALUE2} ms &7(20 TPS = 50 ms; nie MSPT)'
+    online-view-distance: '&eOnline: &f{VALUE1}/{VALUE2} &8| &eView distance: &f{VALUE3}'
+    pozostale-swiaty-uwzglednione-w-sumie: '&7Pozostale swiaty: {VALUE1} (uwzglednione w sumie).'
+    ram-jvm-heap-mib-uzyte-limit: '&eRAM JVM heap: &f{VALUE1} / {VALUE2} MiB &7(uzyte / limit, {VALUE3})'
+    ram-przydzielony-non-heap-mib: '&eRAM przydzielony / non-heap: &f{VALUE1} / {VALUE2} MiB'
+    ram-systemu-wolny-caly-mib-widok: '&eRAM systemu wolny / caly: &f{VALUE1} / {VALUE2} MiB &7(widok JVM)'
+    serwer: '&eSerwer: &f{VERSION}'
+    swiaty-chunki-encje-dropy: '&eSwiaty / chunki / encje / dropy: &f{VALUE1} / {CHUNKS} / {ENTITIES} / {ITEMS}'
+    tps-1-5-15-min: '&eTPS 1/5/15 min: &f{VALUE1} / {VALUE2} / {VALUE3} &7({VALUE4})'
+    uptime-jvm-dysk-wolny-mib: '&eUptime JVM: &f{VALUE1} &8| &eDysk wolny: &f{VALUE2} MiB'
+    wydajnosc-serwera: '&6&lWYDAJNOSC SERWERA'
+shop:
+  click-shop:
+    dodano-do-szybkiego-zakupu: '&aDodano &f{ITEM} &ado szybkiego zakupu.'
+    usunieto-z-szybkiego-zakupu: '&eUsunieto &f{ITEM} &ez szybkiego zakupu.'
+  click-upgrade:
+    kolejka-pulapek-jest-pelna: '&cKolejka pulapek jest pelna!'
+  item-affordable: '&a{ITEM}'
+  item-unaffordable: '&c{ITEM}'
+  items:
+    arrows:
+      lore: []
+      name: 8 strzal
+    axe:
+      lore: []
+      name: Siekiera
+    bedbug:
+      lore: []
+      name: Pluskwa
+    bow-power:
+      lore: []
+      name: Luk (Moc I)
+    bow-punch:
+      lore: []
+      name: Luk (Moc I, Odrzut I)
+    bow:
+      lore: []
+      name: Luk
+    bridge-egg:
+      lore: []
+      name: Jajo mostowe
+    chain-armor:
+      lore: []
+      name: Stala kolczuga
+    clay:
+      lore: []
+      name: Utwardzona glina
+    diamond-armor:
+      lore: []
+      name: Stala diamentowa zbroja
+    diamond-sword:
+      lore: []
+      name: Diamentowy miecz
+    dream-defender:
+      lore: []
+      name: Straznik snow
+    endstone:
+      lore: []
+      name: Kamien Endu
+    fireball:
+      lore: []
+      name: Kula ognia
+    glass:
+      lore: []
+      name: Szklo odporne na wybuchy
+    golden-apple:
+      lore: []
+      name: Zlote jablko
+    invis:
+      lore: []
+      name: Mikstura niewidzialnosci
+    iron-armor:
+      lore: []
+      name: Stala zelazna zbroja
+    iron-sword:
+      lore: []
+      name: Zelazny miecz
+    jump:
+      lore: []
+      name: Mikstura skoku
+    knockback-stick:
+      lore: []
+      name: Kij odrzutu
+    ladder:
+      lore: []
+      name: Drabina
+    magic-milk:
+      lore: []
+      name: Magiczne mleko
+    obsidian:
+      lore: []
+      name: Obsydian
+    pearl:
+      lore: []
+      name: Perla Endu
+    pickaxe:
+      lore: []
+      name: Kilof
+    shears:
+      lore: []
+      name: Stale nozyce
+    speed:
+      lore: []
+      name: Mikstura szybkosci
+    sponge:
+      lore: []
+      name: Gabka
+    stone-sword:
+      lore: []
+      name: Kamienny miecz
+    tnt:
+      lore: []
+      name: TNT
+    water:
+      lore: []
+      name: Wiadro wody
+    wood:
+      lore: []
+      name: Debowe deski
+    wool:
+      lore: []
+      name: Welna
+  open-upgrades:
+    koszt-diamentow: '&7Koszt: &b{VALUE1} diamentow'
+    koszt-diamenty: '&7Koszt: &b{VALUE1} diamenty'
+    koszt-pulapki-diamentow: '&7Koszt pulapki: &b{VALUE1} diamentow'
+    koszty-diamentow: '&7Koszty: &b{VALUE1} diamentow'
+    kupione: '&7Kupione: {VALUE1}'
+    kuznia: '&bKuznia'
+    nie: '&cNIE'
+    ochrona-na-calej-zbroi: '&7Ochrona na calej zbroi.'
+    ostrosc-i-na-wszystkich-mieczach: '&7Ostrosc I na wszystkich mieczach.'
+    ostrzone-miecze: '&bOstrzone miecze'
+    podczas-naglej-smierci: '&7podczas Naglej smierci.'
+    poziom-2: '&7Poziom: &e{VALUE1}/2'
+    poziom-4: '&7Poziom: &e{VALUE1}/4'
+    pulapka-alarmowa: '&6Pulapka alarmowa'
+    pulapka-kontratakujaca: '&ePulapka kontratakujaca'
+    pulapka-zmeczenia-gornika: '&7Pulapka zmeczenia gornika'
+    regeneracja-w-poblizu-bazy: '&7Regeneracja w poblizu bazy.'
+    slepota-i-spowolnienie-dla-intruza: '&7Slepota i spowolnienie dla intruza.'
+    staly-efekt-pospiechu: '&7Staly efekt pospiechu.'
+    strefa-leczenia: '&bStrefa leczenia'
+    szalony-gornik: '&bSzalony gornik'
+    szybkosc-i-skok-dla-obroncow: '&7Szybkosc i skok dla obroncow.'
+    tak: '&aTAK'
+    to-pulapka: '&cTo pulapka!'
+    twoja-druzyna-otrzyma-dodatkowego-smoka: '&7Twoja druzyna otrzyma dodatkowego smoka'
+    ujawnia-niewidzialnych-intruzow: '&7Ujawnia niewidzialnych intruzow.'
+    ulepsza-generowanie-surowcow-w-bazie: '&7Ulepsza generowanie surowcow w bazie.'
+    wzmocnienie-smoka: '&bWzmocnienie smoka'
+    wzmocniona-zbroja: '&bWzmocniona zbroja'
+    zmeczenie-gornika-dla-intruza: '&7Zmeczenie gornika dla intruza.'
+  open:
+    kategorii-aby-dodac-go-tutaj: '&7kategorii, aby dodac go tutaj.'
+    puste-miejsce-szybkiego-zakupu: '&cPuste miejsce szybkiego zakupu'
+    uzyj-shift-klik-na-przedmiocie-w: '&7Uzyj Shift+klik na przedmiocie w innej'
+  pay-d:
+    potrzebujesz-diamentow: '&cPotrzebujesz {VALUE1} diamentow!'
+  pretty:
+    bloki: Bloki
+    dystans: Dystans
+    mikstury: Mikstury
+    narzedzia: Narzedzia
+    szybki-zakup: Szybki zakup
+    uzytkowe: Uzytkowe
+    walka: Walka
+    zbroja: Zbroja
+  purchase:
+    kij-odrzutu: '&6Kij odrzutu'
+    magiczne-mleko: '&fMagiczne mleko'
+    masz-juz-to-stale-ulepszenie-lub: '&cMasz juz to stale ulepszenie lub jego lepsza wersje!'
+    mikstura-niewidzialnosci-30-s: '&7Mikstura niewidzialnosci ({SECONDS} s)'
+    mikstura-skoku-v-45-s: '&aMikstura skoku {LEVEL} ({SECONDS} s)'
+    mikstura-szybkosci-ii-45-s: '&bMikstura szybkosci {LEVEL} ({SECONDS} s)'
+    nie-masz-wystarczajaco: '&cNie masz wystarczajaco: {VALUE1}!'
+    odpornosc-na-pulapki-przez-30-sekund: '&7Odpornosc na pulapki przez {SECONDS} sekund.'
+    ten-przedmiot-jest-wylaczony-w-konfiguracji: '&cTen przedmiot jest wylaczony w konfiguracji sklepu.'
+  render:
+    kliknij-aby-kupic: '&eKliknij, aby kupic!'
+    koszt: '&7Koszt: {PRICE}'
+    nie-masz-wystarczajaco: '&cNie masz wystarczajaco: {CUR}!'
+    stale-narzedzie-z-ulepszeniami-po-smierci: '&7Stale narzedzie z ulepszeniami. Po smierci'
+    traci-jeden-poziom: '&7traci jeden poziom.'
+  top:
+    text: ' '
+slime-world-service:
+  complete-runtime-success:
+    zaladowano-swieza-kopie-mapy-jako-przez: Zaladowano swieza kopie mapy {MAP} jako {RUNTIME} przez {VALUE3} {VALUE4}.
+  detect:
+    wykryto-slimeworldmanager-ale-nie-udalo-sie: 'Wykryto SlimeWorldManager, ale nie udalo sie pobrac loadera ''file'': {VALUE1}'
+  ensure-stored-template:
+    brak-poprawnej-nazwy-mapy-zrodlowej: Brak poprawnej nazwy mapy zrodlowej
+    brak-zapisanego-szablonu-i-folderu-zrodlowego: Brak zapisanego szablonu i folderu zrodlowego {SOURCE_NAME} z level.dat
+    cswm-nie-zapisal-odtwarzanego-szablonu: CSWM nie zapisal odtwarzanego szablonu {TEMPLATE}
+    mapa-jest-w-konfiguratorze: Mapa jest w konfiguratorze
+    nie-mozna-odtworzyc-szablonu-na-swiecie: 'Nie mozna odtworzyc szablonu: na swiecie zrodlowym sa gracze albo jest on glownym lobby'
+    nie-mozna-wyladowac-swiata-zrodlowego: Nie mozna wyladowac swiata zrodlowego {SOURCE_NAME}
+    niekompletna-konfiguracja-mapy: 'Niekompletna konfiguracja mapy: {MISSING}'
+    odtworzono-brakujacy-szablon-z-zapisanej-mapy: Odtworzono brakujacy szablon {TEMPLATE} z zapisanej mapy {SOURCE_NAME} bez ponownej
+      konfiguracji.
+  finish-generated-runtime:
+    cswm-nie-wygenerowal-runtime: 'CSWM nie wygenerowal runtime {RUNTIME}: {VALUE2}'
+    cswm-zakonczyl-generowanie-ale-bukkit-nadal: CSWM zakonczyl generowanie, ale Bukkit nadal nie widzi swiata {RUNTIME} po 40 tickach
+  finished:
+    nie-udalo-sie-przygotowac-swiezej-mapy: 'Nie udalo sie przygotowac swiezej mapy po meczu: {VALUE1}'
+    sprawdz-konsole-nie-musisz-konfigurowac-mapy: '&7Sprawdz konsole. Nie musisz konfigurowac mapy od nowa.'
+    swieza-kopia-mapy-jest-gotowa: '&aSwieza kopia mapy &f{MAP} &ajest gotowa: &7{PLAYER}'
+    szablon-mapy-zostal-zapisany-ale-nie: '&cSzablon mapy zostal zapisany, ale nie udalo sie przygotowac kopii meczu.'
+    szablon-zapisano-ale-runtime-nie-wystartowal: 'Szablon {MAP} zapisano, ale runtime nie wystartowal: {VALUE2}'
+  fire-callbacks:
+    blad-callbacku-ladowania-mapy: 'Blad callbacku ladowania mapy: {VALUE1}'
+  has-template:
+    nie-mozna-sprawdzic-zapisanego-szablonu: 'Nie mozna sprawdzic zapisanego szablonu {MAP}: {VALUE2}'
+  invoke-compatible:
+    brak-obiektu-dla-metody: Brak obiektu dla metody {NAME}
+  load-slime-world:
+    nie-znaleziono-obslugiwanej-metody-loadworld-w: Nie znaleziono obslugiwanej metody loadWorld w {PLAYER}
+  prepare-runtime-async:
+    brak-dzialajacego-slime-world-managera: Brak dzialajacego Slime World Managera
+    brak-mapy: Brak mapy
+    mapa-jest-obecnie-edytowana-zakoncz-konfiguracje: Mapa jest obecnie edytowana. Zakoncz konfiguracje przed dolaczeniem.
+  prepare-runtime:
+    nie-mozna-przygotowac-mapy-brak-dzialajacego: 'Nie mozna przygotowac mapy {MAP}: brak dzialajacego Slime World Managera.'
+  provider-name:
+    brak: brak
+  provider-version:
+    brak: brak
+  publish-template:
+    brak-slime-world-managera: '&c&lBRAK SLIME WORLD MANAGERA'
+    czysty-szablon: '&7Czysty szablon: &f{TEMPLATE}'
+    import-zakonczyl-sie-bez-bledu-ale: Import zakonczyl sie bez bledu, ale loader nie widzi swiata {TEMPLATE}
+    mapa-zatwierdzona: '&a&lMAPA ZATWIERDZONA'
+    musze-miec-bezpieczne-miejsce-do-ktorego: '&7Musze miec bezpieczne miejsce, do ktorego przeniose administratora przed wyladowaniem
+      mapy.'
+    najpierw-ustaw-glowne-lobby-serwera-bw: '&cNajpierw ustaw glowne lobby serwera: &f/bw ustawlobby&c.'
+    nie-udalo-sie-utworzyc-szablonu: '&cNie udalo sie utworzyc szablonu: &f{VALUE1}'
+    nie-udalo-sie-wyladowac-swiata-mapy: '&cNie udalo sie wyladowac swiata mapy. Sprawdz, czy ktos nadal na nim przebywa.'
+    nie-znaleziono-folderu-swiata: '&cNie znaleziono folderu swiata: &f{PLAYER}'
+    przygotowuje-teraz-swieza-kopie-meczu-w: '&ePrzygotowuje teraz swieza kopie meczu w tle...'
+    publikacja-szablonu-nie-powiodla-sie: 'Publikacja szablonu {MAP} nie powiodla sie: {VALUE2}'
+    swiat-zrodlowy-nie-jest-zaladowany-wejdz: '&cSwiat zrodlowy &f{VALUE1} &cnie jest zaladowany. Wejdz ponownie przez &f/konfiguruj
+      {MAP}&c.'
+    szablon-zapisano-ale-slime-world-manager: Szablon zapisano, ale Slime World Manager nie potrafi go ponownie wczytac
+    szczegoly-sa-w-konsoli-serwera-przywracam: '&7Szczegoly sa w konsoli serwera. Przywracam mape do trybu edycji.'
+    ta-mapa-jest-jednoczesnie-glownym-lobby: '&cTa mapa jest jednoczesnie glownym lobby serwera.'
+    uruchom-poprawnie-swoftyworldmanager-slimeworldmanager-dla-minecraft: '&7Uruchom poprawnie &fSwoftyWorldManager / SlimeWorldManager
+      &7dla Minecraft 1.8.x i wykonaj pelny restart serwera.'
+    ustaw-lobby-na-innym-swiecie-przez: '&7Ustaw lobby na innym swiecie przez &f/bw ustawlobby&7. Mape BedWars musze moc wyladowac.'
+  restore-editor-world:
+    nie-udalo-sie-automatycznie-przywrocic-mapy: 'Nie udalo sie automatycznie przywrocic mapy edycyjnej {MAP}: {VALUE2}'
+  root-message:
+    nieznany-blad: nieznany blad
+  start-runtime-generation:
+    cswm-zwrocil-pusty-szablon: CSWM zwrocil pusty szablon
+    nie-udalo-sie-rozpoczac-tworzenia-runtime: 'Nie udalo sie rozpoczac tworzenia runtime mapy {MAP} przez {VALUE2}: {VALUE3}'
+    nie-udalo-sie-utworzyc-klona-swiata: Nie udalo sie utworzyc klona swiata
+    przygotowywanie-swiezej-kopii-mapy-jako: Przygotowywanie swiezej kopii mapy {MAP} jako {RUNTIME}...
+  unload-runtime:
+    cswm-nie-wyladowal-runtime-przez-swoje: 'CSWM nie wyladowal runtime przez swoje API, uzywam Bukkit fallback: {VALUE1}'
+    nie-udalo-sie-wyladowac-runtime-swiata: Nie udalo sie wyladowac runtime swiata {PLAYER}.
+    przygotowywanie-mapy-zostalo-anulowane: Przygotowywanie mapy zostalo anulowane
+    usunieto-zuzyta-kopie-mapy-bez-zapisu: Usunieto zuzyta kopie mapy {PLAYER} bez zapisu zmian.
+spectator:
+  follow:
+    najpierw-wylacz-ingerencje-w-panelu-admina: '&eNajpierw wylacz ingerencje w panelu admina.'
+    obserwujesz-teraz-komparator-swobodny-lot-lozko: '&aObserwujesz teraz &f{PLAYER}&a. &7Komparator: swobodny lot, lozko: lobby.'
+    ten-zawodnik-jest-teraz-niedostepny-odswiez: '&eTen zawodnik jest teraz niedostepny. Odswiez liste.'
+  make:
+    na-punkt-obserwacyjny-mapy: '&7na punkt obserwacyjny mapy.'
+    swobodny-lot-ppm: '&eSwobodny lot &7(PPM)'
+    teleporter-ppm: '&aTeleporter &7(PPM)'
+    wybierz-zawodnika-do-obserwowania: '&7Wybierz zawodnika do obserwowania.'
+    zakoncz-podglad-zawodnika-i-wroc: '&7Zakoncz podglad zawodnika i wroc'
+  open-teleporter:
+    brak-dostepnych-zawodnikow: '&7Brak dostepnych zawodnikow'
+    druzyna: '&7Druzyna: {VALUE1}{TEAM}'
+    gracze-moga-sie-wlasnie-odradzac: '&7Gracze moga sie wlasnie odradzac.'
+    hp: '&7HP: &c{VALUE1}&7/{VALUE2}'
+    kliknij-aby-obserwowac: '&eKliknij, aby obserwowac!'
+    nastepna-strona: '&eNastepna strona'
+    odswiez-liste: '&aOdswiez liste'
+    odswiez-liste-za-chwile: '&7Odswiez liste za chwile.'
+    poprzednia-strona: '&ePoprzednia strona'
+    strona: '&7Strona {VALUE1}/{PAGES}'
+    swobodny-lot: '&eSwobodny lot'
+    wroc-do-lobby: '&cWroc do lobby'
+    wroc-na-punkt-obserwacyjny: '&7Wroc na punkt obserwacyjny.'
+    zakoncz-obserwacje-meczu: '&7Zakoncz obserwacje meczu.'
+  stop-following:
+    swobodny-lot-kompas-otwiera-liste-zawodnikow: '&eSwobodny lot. &7Kompas otwiera liste zawodnikow.'
+  toggle-intervention:
+    admin-wlaczyl-ingerencje-w-mecz: '&6[ADMIN] &f{PLAYER} &ewlaczyl ingerencje w mecz.'
+    admin-zakonczyl-ingerencje: '&6[ADMIN] &f{PLAYER} &ezakonczyl ingerencje.'
+    ingerencja-jest-dostepna-tylko-dla-admina: '&cIngerencja jest dostepna tylko dla admina obserwujacego mecz.'
+    ingerencja-mozesz-budowac-usuwac-bloki-i: '&6Ingerencja: &fmozesz budowac, usuwac bloki i zarzadzac przedmiotami. &7Gwiazda lub
+      /bw panel: powrot do obserwacji.'
+states:
+  countdown: odliczanie
+  ended: zakonczony
+  paused: wstrzymany
+  running: trwa
+  waiting: oczekiwanie
+sword-rules:
+  ensure-sword:
+    brak-miejsca-jeden-przedmiot-wypadl-na: '&eBrak miejsca: jeden przedmiot wypadl na ziemie, aby zrobic miejsce na miecz.'
+tab:
+  footer-lobby:
+  - '&eKliknij kompas, aby dolaczyc do meczu turniejowego'
+  - '&8BedWars &7• &fMateusz Nowosielski'
+  footer-match:
+  - '&7Nastepne: &f{NEXT_EVENT}'
+  - '&7Gracze: &f{PLAYERS}&8/&f{MAX_PLAYERS} &8• &7Ty: {TEAM}'
+  - '&8BedWars &7• &fMateusz Nowosielski'
+  header:
+  - '&e&lBED WARS'
+  - '&7Turniej szkolny &8• &7Mapa: &f{MAP}'
+  - ''
+  - '{RED_NAME} &7[{RED_ALIVE}] &8| {GREEN_NAME} &7[{GREEN_ALIVE}] &8| {BLUE_NAME} &7[{BLUE_ALIVE}] &8| {WHITE_NAME} &7[{WHITE_ALIVE}]'
+  name-admin: '&6[ADMIN] {PLAYER}'
+  name-player: '{COLOR}{PLAYER}'
+  name-spectator: '&7✦ {PLAYER}'
+  send-header-footer:
+    nie-udalo-sie-ustawic-naglowka-tab: 'Nie udalo sie ustawic naglowka TAB: {VALUE1} - {ERROR}'
+teams:
+  blue:
+    name: Niebiescy
+    short: N
+  green:
+    name: Zieloni
+    short: Z
+  red:
+    name: Czerwoni
+    short: C
+  white:
+    name: Biali
+    short: B
+title-sender:
+  fail:
+    nie-mozna-wysylac-title-wymagany-spigot: 'Nie mozna wysylac title (wymagany Spigot 1.8.8): {VALUE1}'
+titles:
+  bed-lost:
+    subtitle: '&fNastepna smierc oznacza &c&lELIMINACJE!'
+    title:
+    - '&c&lSTRACILES LOZKO!'
+    - '&4&lSTRACILES LOZKO!'
+  countdown-last:
+    subtitle: '&fStart meczu za &e{SECONDS} s &8| {TEAM}'
+    title:
+    - '&c&l{SECONDS}'
+    - '&6&l{SECONDS}'
+  countdown-paused:
+    subtitle: '&7Czekaj na wznowienie odliczania'
+    title: '&e&lPAUZA'
+  countdown:
+    subtitle: '&fStart meczu za &e{SECONDS} s &8| {TEAM}'
+    title:
+    - '&e&l{SECONDS}'
+    - '&f&l{SECONDS}'
+  defeat:
+    subtitle: '&fWygrywa druzyna: {WINNER}'
+    title:
+    - '&c&lPORAZKA'
+    - '&4&lPORAZKA'
+  eliminated:
+    subtitle: '&7Twoje lozko zostalo zniszczone. Obserwujesz mecz.'
+    title: '&c&lWYELIMINOWANY'
+  finish:
+    subtitle: '&fWygrywa druzyna: {WINNER}'
+    title: '&e&lKONIEC MECZU'
+  respawn-bed-lost-paused:
+    subtitle: '&cLozko stracone! &8| &ePauza odrodzenia'
+    title:
+    - '&c&lZGINALES!'
+    - '&4&lZGINALES!'
+  respawn-bed-lost:
+    subtitle: '&cLozko stracone! &8| &fOdrodzenie za &e{SECONDS} s'
+    title:
+    - '&c&lZGINALES!'
+    - '&4&lZGINALES!'
+  respawn-paused:
+    subtitle: '&eOdrodzenie wstrzymane - pauza meczu'
+    title:
+    - '&c&lZGINALES!'
+    - '&4&lZGINALES!'
+  respawn:
+    subtitle: '&fOdrodzisz sie za &e&l{SECONDS} &fsek.'
+    title:
+    - '&c&lZGINALES!'
+    - '&4&lZGINALES!'
+  respawned:
+    subtitle: '&fWroc do walki! &8| {TEAM}'
+    title:
+    - '&a&lODRODZILES SIE!'
+    - '&f&lODRODZILES SIE!'
+  start:
+    subtitle: '&fChron swoje lozko! &8| {TEAM}'
+    title:
+    - '&a&lSTART!'
+    - '&f&lSTART!'
+  victory:
+    subtitle: '&fTwoja druzyna wygrala! &8| {TEAM}'
+    text: ZWYCIESTWO!
+    title:
+    - '&6&l{TEXT}'
+    - '&e&l{TEXT}'
+  waiting:
+    dots:
+    - .
+    - ..
+    - '...'
+    joined-subtitle: '&7Oczekiwanie na start{DOTS} &8| {TEAM}'
+    next-game-subtitle: '&7Czekaj na kolejna rozgrywke{DOTS}'
+    subtitle: '&7Kliknij kompas, aby dolaczyc do meczu{DOTS}'
+    title:
+    - '&b&lOCZEKUJE'
+    - '&f&lOCZEKUJE'
+tournament-extra-rules:
+  drop:
+    nie-mozesz-wyrzucac-surowcow-podczas-spadania: '&cNie mozesz wyrzucac surowcow podczas spadania w void.'
+traps:
+  alarm:
+    name: Pulapka alarmowa
+  counter-offensive:
+    name: Pulapka kontratakujaca
+  its-a-trap:
+    name: To pulapka!
+  miner-fatigue:
+    name: Pulapka zmeczenia gornika
+view:
+  admin: '&6&lINGERENCJA ADMINA'
+  countdown: Start za &a{SECONDS} s
+  no-map: brak
+  observer: '&bTryb obserwacji'
+  spectator: '&7Obserwator'
+  waiting: Oczekiwanie na start
+  watching: '&7Obserwujesz: &f{PLAYER}'
+world-border-config:
+  click:
+    np-120-border-240x240-wpisz-anuluj: '&7Np. &e120 &7= border 240x240. Wpisz &canuluj &7aby przerwac.'
+    text: '&8&m----------------------------------------'
+    worldborder-ustawiono-srodek-na-x-z: '&a&lWORLDBORDER &8» &aUstawiono srodek na X &f{VALUE1} &aZ &f{VALUE2}&a.'
+    worldborder-wpisz-na-czacie-promien-w: '&6&lWORLDBORDER &8» &fWpisz na czacie promien w blokach.'
+  decorate:
+    kliknij-i-wpisz-liczbe-na-czacie: '&eKliknij i wpisz liczbe na czacie'
+    kliknij-otworz-punkty-glowne: '&eKliknij = otworz Punkty glowne'
+    kliknij-ustaw-srodek-tutaj: '&eKliknij = ustaw srodek tutaj'
+    nie-ustawiono: '&cNIE USTAWIONO'
+    np-120-daje-border-240x240: '&7Np. 120 daje border 240x240.'
+    promien-blokow: '&aPromien: &f{VALUE1} blokow'
+    promien-nie-ustawiono: '&cPromien: NIE USTAWIONO'
+    promien-to-odleglosc-od-srodka-do: '&7Promien to odleglosc od srodka do krawedzi.'
+    srodek: '&aSrodek: &f{VALUE1}, {VALUE2}'
+    srodek-nie-ustawiono: '&cSrodek: NIE USTAWIONO'
+    srodek-worldbordera: '&c&lSRODEK WORLDBORDERA'
+    stan-na-srodku-mapy: '&7Stan na srodku mapy.'
+    text: ''
+    ustawiono-x-z: '&aUstawiono: &fX {VALUE1} &7Z {VALUE2}'
+    worldborder-gotowy: '&a&lWORLDBORDER GOTOWY'
+    worldborder-niekompletny: '&c&lWORLDBORDER NIEKOMPLETNY'
+    zasieg-worldbordera: '&6&lZASIEG WORLDBORDERA'
+  handle-radius:
+    anulowano-ustawianie-worldbordera: '&eAnulowano ustawianie worldbordera.'
+    podaj-liczbe-od-10-do-5000: '&cPodaj liczbe od 10 do 5000.'
+    to-nie-jest-liczba-wpisz-np: '&cTo nie jest liczba. Wpisz np. &f120 &calbo &fanuluj&c.'
+    worldborder-ustawiono-promien-na-blokow: '&a&lWORLDBORDER &8» &aUstawiono promien na &f{VALUE1} &ablokow.'
+world-border:
+  apply:
+    nie-udalo-sie-ustawic-worldbordera-dla: 'Nie udalo sie ustawic worldbordera dla {MAP}: {ERROR}'
+  save:
+    bedwars-worldborder-per-mapa: BedWars worldborder per mapa
+    nie-udalo-sie-zapisac-worldborders-properties: 'Nie udalo sie zapisac worldborders.properties: {ERROR}'
+  tick-sudden-death:
+    border-zamkniety-wszyscy-traca-hp-obrazenia: '&4&lBORDER ZAMKNIETY! &cWszyscy traca HP. Obrazenia rosna az do zwyciestwa jednej
+      druzyny!'
+    ostateczna-walka-rosnace-obrazenia-hp-s: '&c&lOSTATECZNA WALKA! &7Rosnace obrazenia: &c{VALUE1} HP/s&7. Walcz o zwyciestwo!'
+    za-borderem-tracisz-2-serca-s: '&cZa borderem! Tracisz {DAMAGE} HP/s.'

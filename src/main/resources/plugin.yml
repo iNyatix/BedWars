@@ -1,0 +1,22 @@
+name: BedWars
+main: space.nyatix.bedwars.BedWarsBootstrap
+version: 3.12.0
+author: Mateusz Nowosielski
+description: Rozbudowany system BedWars na turniej szkolny pod Spigot 1.8.8
+softdepend: [SwoftyWorldManager, SlimeWorldManager]
+commands:
+  konfiguruj:
+    description: Laduje mape i uruchamia prosty konfigurator BedWars
+    usage: /konfiguruj <nazwa_mapy>
+    permission: bedwars.admin
+  bw:
+    description: BedWars - komendy graczy i administracji
+    usage: /bw
+  party:
+    aliases: [p]
+    description: Party - wspolne dolaczanie i wybor stalego koloru w GUI
+    usage: /party
+permissions:
+  bedwars.admin:
+    description: Pelny dostep administracyjny do BedWars
+    default: op

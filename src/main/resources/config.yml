@@ -1,0 +1,717 @@
+lobby:
+  # Glowne lobby serwera. Gracz po zwyklym wejsciu na serwer trafia tutaj.
+  # Domyslnie i dla turnieju: world, 0 67 0.
+  joinLocation:
+    world: "world"
+    x: 0
+    y: 67
+    z: 0
+    yaw: 0
+    pitch: 0
+
+game:
+  returnToLobbySeconds: 10
+  # Zapamietywane automatycznie przy wyborze mapy; puste = pierwsza kompletna mapa.
+  activeArena: ""
+  minPlayers: 2
+  playersPerTeam: 4
+  reconnectSeconds: 180
+  countdownSeconds: 20
+  respawnSeconds: 5
+  respawnProtectionSeconds: 3
+  # Tempo generatorow w bazach, razem z ulepszeniami kuzni (1.5 = o 50% szybciej).
+  baseGeneratorSpeed: 1.5
+  # 0.75 = o 25% mniej HP z regeneracji w tym samym czasie; nie dotyczy instant heal.
+  regenerationMultiplier: 0.75
+  combatTagSeconds: 15
+  baseRadius: 16
+  buildHeight: 120
+  voidY: 0
+  friendlyFire: false
+  autoJoin: false
+  # Turniej szkolny: domyslnie NIE startuj automatycznie po kilku pierwszych osobach.
+  # true = odliczanie ruszy dopiero, gdy wszystkie sloty (4 x playersPerTeam) beda zajete.
+  autoStartWhenFull: false
+  # Kwadratowa strefa bez budowania wokol generatorow diamentow/szmaragdow. 3 = 3x3.
+  generatorProtectionSize: 3
+  allowAdminBuild: true
+  timers:
+    diamond2: 360
+    emerald2: 720
+    diamond3: 1080
+    emerald3: 1440
+    bedsGone: 1800
+    suddenDeath: 2400
+    # Pelne zamkniecie bordera (1x1), NIE koniec meczu/remis.
+    # Od suddenDeath border kurczy sie wokol skonfigurowanego srodka mapy.
+    # Po zamknieciu rosnace obrazenia wymuszaja zwyciestwo ostatniej druzyny.
+    end: 3000
+scoreboard:
+  enabled: true
+  healthEnabled: true
+  dateFormat: dd/MM/yy
+  serverLine: "Elektronik"
+logging:
+  matches: true
+messages:
+  victoryTitle: "ZWYCIESTWO!"
+
+# Animowane title, dzwieki odliczania i fajerwerki przez 10 s po wygranej.
+# Brakujace opcje w starym config.yml sa uzupelniane automatycznie.
+effects:
+  titles: true
+  victoryFireworks: true
+  sounds: true
+  bedBreakDragonSound: true
+  finalKillLightning: true
+
+
+# TNT jump i fireball jump. Zmieniaj ostroznie - wartosci sa dobrane pod PvP 1.8.8.
+jumps:
+  tnt:
+    enabled: true
+    radius: 5
+    horizontal: 1.15
+    vertical: 0.90
+    maxHorizontal: 1.90
+  fireball:
+    enabled: true
+    radius: 4.5
+    horizontal: 1.45
+    vertical: 0.75
+    maxHorizontal: 2.20
+
+# Automatyczne komunikaty wysylane cyklicznie do wszystkich graczy.
+# Dodawaj kolejne jako messages.5, messages.6 itd. /bw przeladuj odswieza je bez restartu.
+announcements:
+  enabled: true
+  intervalSeconds: 180
+  prefix: "&6&lELEKTRONIK &8» &f"
+  messages:
+    1: "Organizatorem turnieju jest &eSamorzad Uczniowski Elektronika&f."
+    2: "Serwer zostal stworzony przez &eMateusza Nowosielskiego &fwe wspolpracy z &eSamorzadem Uczniowskim&f."
+    3: "Powodzenia wszystkim uczestnikom turnieju BedWars!"
+    4: "W razie problemow technicznych zglos sie do organizatorow turnieju."
+
+# Sklep i ulepszenia. Brakujace wpisy plugin dopisuje automatycznie przy starcie.
+# Wszystko mozna tez zmieniac z /konfiguruj <mapa> -> Sklepy NPC.
+shop:
+  items:
+    wool:
+      enabled: true
+      price: 4
+      amount: 16
+      currency: IRON_INGOT
+    clay:
+      enabled: true
+      price: 12
+      amount: 16
+      currency: IRON_INGOT
+    glass:
+      enabled: true
+      price: 12
+      amount: 4
+      currency: IRON_INGOT
+    endstone:
+      enabled: true
+      price: 24
+      amount: 12
+      currency: IRON_INGOT
+    ladder:
+      enabled: true
+      price: 4
+      amount: 8
+      currency: IRON_INGOT
+    wood:
+      enabled: true
+      price: 4
+      amount: 16
+      currency: GOLD_INGOT
+    obsidian:
+      enabled: true
+      price: 4
+      amount: 4
+      currency: EMERALD
+    stone_sword:
+      enabled: true
+      price: 10
+      amount: 1
+      currency: IRON_INGOT
+    iron_sword:
+      enabled: true
+      price: 7
+      amount: 1
+      currency: GOLD_INGOT
+    diamond_sword:
+      enabled: true
+      price: 4
+      amount: 1
+      currency: EMERALD
+    knockback_stick:
+      enabled: true
+      price: 5
+      amount: 1
+      currency: GOLD_INGOT
+    chain_armor:
+      enabled: true
+      price: 40
+      amount: 1
+      currency: IRON_INGOT
+    iron_armor:
+      enabled: true
+      price: 12
+      amount: 1
+      currency: GOLD_INGOT
+    diamond_armor:
+      enabled: true
+      price: 6
+      amount: 1
+      currency: EMERALD
+    shears:
+      enabled: true
+      price: 20
+      amount: 1
+      currency: IRON_INGOT
+    pickaxe:
+      enabled: true
+      price: 10
+      amount: 1
+      currency: IRON_INGOT
+    axe:
+      enabled: true
+      price: 10
+      amount: 1
+      currency: IRON_INGOT
+    arrows:
+      enabled: true
+      price: 2
+      amount: 8
+      currency: GOLD_INGOT
+    bow:
+      enabled: true
+      price: 12
+      amount: 1
+      currency: GOLD_INGOT
+    bow_power:
+      enabled: true
+      price: 20
+      amount: 1
+      currency: GOLD_INGOT
+    bow_punch:
+      enabled: true
+      price: 6
+      amount: 1
+      currency: EMERALD
+    speed:
+      enabled: true
+      price: 1
+      amount: 1
+      currency: EMERALD
+    jump:
+      enabled: true
+      price: 1
+      amount: 1
+      currency: EMERALD
+    invis:
+      enabled: true
+      price: 2
+      amount: 1
+      currency: EMERALD
+    golden_apple:
+      enabled: true
+      price: 3
+      amount: 1
+      currency: GOLD_INGOT
+    bedbug:
+      enabled: true
+      price: 24
+      amount: 1
+      currency: IRON_INGOT
+    dream_defender:
+      enabled: true
+      price: 120
+      amount: 1
+      currency: IRON_INGOT
+    fireball:
+      enabled: true
+      price: 40
+      amount: 1
+      currency: IRON_INGOT
+    tnt:
+      enabled: true
+      price: 4
+      amount: 1
+      currency: GOLD_INGOT
+    pearl:
+      enabled: true
+      price: 4
+      amount: 1
+      currency: EMERALD
+    water:
+      enabled: true
+      price: 3
+      amount: 1
+      currency: GOLD_INGOT
+    bridge_egg:
+      enabled: true
+      price: 1
+      amount: 1
+      currency: EMERALD
+    magic_milk:
+      enabled: true
+      price: 4
+      amount: 1
+      currency: GOLD_INGOT
+    sponge:
+      enabled: true
+      price: 3
+      amount: 4
+      currency: GOLD_INGOT
+  # Ceny kolejnych poziomow kilofa i siekiery.
+  tiered:
+    pickaxe:
+      1:
+        price: 10
+        currency: IRON_INGOT
+      2:
+        price: 10
+        currency: IRON_INGOT
+      3:
+        price: 3
+        currency: GOLD_INGOT
+      4:
+        price: 6
+        currency: GOLD_INGOT
+    axe:
+      1:
+        price: 10
+        currency: IRON_INGOT
+      2:
+        price: 10
+        currency: IRON_INGOT
+      3:
+        price: 3
+        currency: GOLD_INGOT
+      4:
+        price: 6
+        currency: GOLD_INGOT
+
+upgrades:
+  sharpness:
+    price: 8
+  protection:
+    1: 5
+    2: 10
+    3: 20
+    4: 30
+  haste:
+    1: 4
+    2: 6
+  forge:
+    1: 4
+    2: 8
+    3: 12
+    4: 16
+  healPool:
+    price: 3
+  dragonBuff:
+    price: 5
+  traps:
+    1: 1
+    2: 2
+    3: 4
+
+# Dodatkowe ustawienia rozgrywki. Czasy sa w sekundach, chyba ze nazwa zawiera Ticks.
+# Tierowe generatory: lista od poziomu 0 (baza) albo od poziomu I (neutralne).
+# damage = punkty HP; 2 HP = 1 serce. W naglej smierci maximumDamage ma minimum 20 HP.
+# Animacje odswiezaja sie co 4 ticki. Powtarzalne title trwaja do zmiany stanu gry.
+# menus.icons zmienia tylko wyglad przyciskow; ich funkcje i uprawnienia sa stale.
+# Do ikony mozna dopisac data: 0 (np. kolor szkla). Nazwy/lore edytuj w messages.yml.
+generators:
+  neutral:
+    cap: 48
+    diamondSeconds:
+    - 30
+    - 18
+    - 12
+    emeraldSeconds:
+    - 65
+    - 45
+    - 35
+  base:
+    ironSeconds:
+    - 2
+    - 1
+    - 1
+    - 1
+    - 1
+    ironCap: 64
+    goldSeconds:
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    goldCap: 32
+    emeraldForgeLevel: 4
+    emeraldSeconds: 35
+    emeraldCap: 8
+  sharing:
+    enabled: true
+    radius: 2.35
+  holograms:
+    enabled: true
+heightPenalty:
+  enabled: true
+  y: 105
+  damage: 4
+  warningSeconds: 3
+items:
+  tnt:
+    fuseTicks: 40
+  fireball:
+    explosionPower: 2.2
+    incendiary: false
+  defender:
+    lifetimeSeconds: 240
+  bedbug:
+    lifetimeSeconds: 15
+  bridgeEgg:
+    lifetimeTicks: 80
+  magicMilk:
+    seconds: 30
+  potions:
+    speed:
+      seconds: 45
+      amplifier: 1
+    jump:
+      seconds: 45
+      amplifier: 4
+    invis:
+      seconds: 30
+      amplifier: 0
+party:
+  inviteSeconds: 60
+traps:
+  cooldownSeconds: 10
+  blindness:
+    seconds: 8
+  fatigue:
+    seconds: 10
+  counter:
+    seconds: 15
+suddenDeath:
+  dragonsWithBuff: 2
+  dragonsPerTeam: 1
+  finalRadius: 0.5
+  maximumDamage: 20
+  initialDamage: 4
+  damageIncreasePerSecond: 1
+  outsideDamage: 4
+world:
+  disableWeather: true
+  disableMobs: true
+  freezeTime: false
+  time: 6000
+animations:
+  waiting:
+    frameTicks: 20
+    enabled: true
+    dotsTicks: 12
+  countdown:
+    frameTicks: 12
+    enabled: true
+  countdown-last:
+    frameTicks: 12
+  countdown-paused:
+    frameTicks: 12
+  respawn:
+    frameTicks: 12
+    enabled: true
+  respawn-paused:
+    frameTicks: 12
+  respawn-bed-lost:
+    frameTicks: 12
+  respawn-bed-lost-paused:
+    frameTicks: 12
+  bed-lost:
+    frameTicks: 20
+    enabled: true
+    durationTicks: 80
+  start:
+    frameTicks: 20
+    enabled: true
+    durationTicks: 40
+  respawned:
+    frameTicks: 20
+    enabled: true
+    durationTicks: 40
+  eliminated:
+    frameTicks: 20
+    enabled: true
+    durationTicks: 70
+  victory:
+    frameTicks: 20
+    enabled: true
+    durationTicks: 200
+  defeat:
+    frameTicks: 12
+    enabled: true
+    durationTicks: 200
+  finish:
+    frameTicks: 20
+    enabled: true
+    durationTicks: 200
+fireworks:
+  durationTicks: 200
+  intervalTicks: 20
+  radius: 1.5
+  power: 0
+tab:
+  enabled: true
+holograms:
+  configuration:
+    enabled: true
+sounds:
+  bed-destroyed:
+    enabled: true
+    name: ENDERDRAGON_DEATH
+    volume: 1
+    pitch: 1
+  bed-lost:
+    enabled: true
+    name: ENDERMAN_TELEPORT
+    volume: 1
+    pitch: 1
+  bed-broken:
+    enabled: true
+    name: LEVEL_UP
+    volume: 1
+    pitch: 1
+  trap:
+    enabled: true
+    name: ENDERMAN_TELEPORT
+    volume: 1
+    pitch: 1
+  purchase-failed:
+    enabled: true
+    name: ENDERMAN_TELEPORT
+    volume: 0.5
+    pitch: 0.5
+  purchase:
+    enabled: true
+    name: NOTE_PLING
+    volume: 1
+    pitch: 1.6
+  upgrade:
+    enabled: true
+    name: LEVEL_UP
+    volume: 1
+    pitch: 1.2
+  start:
+    enabled: true
+    name: LEVEL_UP
+    volume: 0.7
+    pitch: 1.3
+  respawn:
+    enabled: true
+    name: ORB_PICKUP
+    volume: 0.7
+    pitch: 1.2
+  victory:
+    enabled: true
+    name: LEVEL_UP
+    volume: 0.7
+    pitch: 1
+  countdown:
+    enabled: true
+    name: NOTE_PLING
+    volume: 0.7
+    pitch: 1
+  countdown-last:
+    enabled: true
+    name: NOTE_PLING
+    volume: 0.7
+    pitch: 1.5
+menus:
+  icons:
+    spectator:
+      make:
+        teleporter-ppm:
+          material: COMPASS
+        swobodny-lot-ppm:
+          material: REDSTONE_COMPARATOR
+      open-teleporter:
+        brak-dostepnych-zawodnikow:
+          material: BARRIER
+        swobodny-lot:
+          material: FEATHER
+        poprzednia-strona:
+          material: ARROW
+        odswiez-liste:
+          material: WATCH
+        nastepna-strona:
+          material: ARROW
+        wroc-do-lobby:
+          material: BED
+    lobby:
+      give-join-item:
+        dolacz-do-meczu-turniejowego-ppm:
+          material: COMPASS
+      give-leave-item:
+        wroc-do-lobby-ppm:
+          material: BED
+    shop:
+      open:
+        puste-miejsce-szybkiego-zakupu:
+          material: STAINED_GLASS_PANE
+      top:
+        text:
+          material: STAINED_GLASS_PANE
+      open-upgrades:
+        ostrzone-miecze:
+          material: IRON_SWORD
+        wzmocniona-zbroja:
+          material: IRON_CHESTPLATE
+        szalony-gornik:
+          material: GOLD_PICKAXE
+        kuznia:
+          material: FURNACE
+        strefa-leczenia:
+          material: BEACON
+        wzmocnienie-smoka:
+          material: DRAGON_EGG
+        to-pulapka:
+          material: TRIPWIRE_HOOK
+        pulapka-kontratakujaca:
+          material: FEATHER
+        pulapka-alarmowa:
+          material: REDSTONE_TORCH_ON
+        pulapka-zmeczenia-gornika:
+          material: IRON_PICKAXE
+    admin-match-menu:
+      control-item:
+        panel-admina-ppm:
+          material: NETHER_STAR
+      open:
+        nastepna-faza:
+          material: REDSTONE_TORCH_ON
+        wskrzes-zawodnika:
+          material: GOLDEN_APPLE
+        wydajnosc-serwera:
+          material: PAPER
+      open-revive:
+        brak-zawodnikow-do-wskrzeszenia:
+          material: BARRIER
+        poprzednia-strona:
+          material: ARROW
+        odswiez:
+          material: WATCH
+        nastepna-strona:
+          material: ARROW
+        wroc-do-panelu:
+          material: ARROW
+    config-menu:
+      give-tool:
+        konfigurator-mapy-ppm:
+          material: DIAMOND_PICKAXE
+      open:
+        konfigurator-mapy:
+          material: NETHER_STAR
+        wyjdz-z-konfiguratora:
+          material: BARRIER
+        pomoc-co-mam-robic:
+          material: BOOK
+        teleport-na-spawn-swiata:
+          material: COMPASS
+      open-points:
+        teleport-na-spawn-swiata:
+          material: COMPASS
+      open-teams:
+        text-2:
+          material: WOOL
+        co-to-jest-strefa-bez-budowania:
+          material: BOOK
+      open-team:
+        baza:
+          material: WOOL
+        teleport-na-spawn-tej-druzyny:
+          material: COMPASS
+        wroc-do-druzyn:
+          material: ARROW
+      open-generators:
+        dodaj-generator-diamentow:
+          material: DIAMOND
+        usun-wszystkie-generatory-diamentow:
+          material: REDSTONE_BLOCK
+        dodaj-generator-szmaragdow:
+          material: EMERALD
+        usun-wszystkie-generatory-szmaragdow:
+          material: REDSTONE_BLOCK
+      open-shops:
+        dodaj-sklep-z-przedmiotami:
+          material: CHEST
+        usun-wszystkie-sklepy-z-przedmiotami:
+          material: REDSTONE_BLOCK
+        dodaj-sklep-ulepszen-druzyny:
+          material: ANVIL
+        usun-wszystkie-sklepy-ulepszen:
+          material: REDSTONE_BLOCK
+        konfiguruj-sklep-z-przedmiotami:
+          material: CHEST
+        konfiguruj-ulepszenia-druzyny:
+          material: DIAMOND
+      open-shop-item-editor:
+        jak-to-dziala:
+          material: BOOK
+      open-shop-item-detail:
+        cena-1:
+          material: REDSTONE
+        cena-1-2:
+          material: EMERALD
+        ilosc-1:
+          material: REDSTONE
+        ilosc-1-2:
+          material: EMERALD
+      open-tool-tier-detail:
+        cena-1:
+          material: REDSTONE
+        cena-1-2:
+          material: EMERALD
+      open-upgrade-price-editor:
+        ceny-ulepszen-druzyny:
+          material: DIAMOND
+        text-2:
+          material: DIAMOND
+      open-settings:
+        graczy-w-druzynie:
+          material: EMERALD
+        minimalna-liczba-graczy:
+          material: REDSTONE
+        odliczanie-do-startu:
+          material: WATCH
+        czas-odrodzenia:
+          material: FEATHER
+        ochrona-po-odrodzeniu:
+          material: GOLDEN_APPLE
+        czas-na-ponowne-polaczenie:
+          material: WATCH
+        poziom-pustki:
+          material: REDSTONE_BLOCK
+      progress-pane:
+        text-3:
+          material: STAINED_GLASS_PANE
+      back:
+        wroc:
+          material: ARROW
+      fill:
+        text:
+          material: STAINED_GLASS_PANE
+    party-color-menu:
+      open:
+        text:
+          material: STAINED_GLASS_PANE
+        text-2:
+          material: WOOL
+        automatyczny-kolor:
+          material: COMPASS
