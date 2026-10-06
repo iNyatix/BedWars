@@ -561,6 +561,6 @@ mvn clean package
 
 Gotowy plugin znajdziesz w `target/BedWars.jar`. Sam zestaw testów uruchomisz przez `mvn test`.
 
-Źródła są w `src/main/java/pl/bedwars2026`, domyślne pliki w `src/main/resources`, a testy w `src/test/java`. Główne części kodu to `command`, `config`, `game`, `gui`, `listener`, `message`, `model`, `shop` i `util`.
+Źródła są w `src/main/java/space/nyatix/bedwars`, domyślne pliki w `src/main/resources`, a testy w `src/test/java`. Główne części kodu to `command`, `config`, `game`, `gui`, `listener`, `message`, `model`, `shop` i `util`.
 
 Przy pluginie korzystałem również z pomocy ChatGPT przy monotonnych sprawach, notuje dla osób które potem by o tym spamiły.
