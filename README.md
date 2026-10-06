@@ -563,4 +563,4 @@ Gotowy plugin znajdziesz w `target/BedWars.jar`. Sam zestaw testów uruchomisz p
 
 Źródła są w `src/main/java/space/nyatix/bedwars`, domyślne pliki w `src/main/resources`, a testy w `src/test/java`. Główne części kodu to `command`, `config`, `game`, `gui`, `listener`, `message`, `model`, `shop` i `util`.
 
-Przy pluginie korzystałem również z pomocy ChatGPT przy monotonnych sprawach, notuje dla osób które potem by o tym spamiły.
+Przy pluginie korzystałem również z pomocy ChatGPT przy monotonnych sprawach, nie polecam korzystać tylko z tej opcji, aczkolwiek do monotonnych spraw które dobrze mu się wyjaśni (chociażby analiza kodu i stworzenie takiego README (całego sam również nie pisałem, projekt szkolny)) jest okej, ale nie stawiałbym w 100% na AI, dużo poprawek niż korzyści. Notuje dla osób które dostrzegły by w takim README nutkę AI, a nie o to chodzi.
